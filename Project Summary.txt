@@ -1,0 +1,23 @@
+Here is an outline of what this visualization needs to do and how I'm planning on implementing these features.
+
+1) We need to calculate the "Real Food Percentage" (RFP) which is the amount a school spends on real food out of the total cost of food
+    The data given includes no information about schools so I'm not sure how we're supposed to get that information
+    The data given only includes information about retailers, we should email Emma and ask if she has data on individual school for us or not
+
+    The way I'm thinking of approaching this is with bar graphs, ideally we'll be able to get our hands on data specific to several schools and display each school's RFP on one chart
+        then open a new bar graph with percentages relating to each category when a user clicks on an individual school's bar
+
+2) She also said she wanted a breakdown of the RFP for each of the 4 RFP criteria: local, fair, ecological, humane
+    we could either display this data on the same bar graph or a separate one
+
+3) once the data vis is complete, she's asked for some interactivity from the user. Namely, the ability to change the RFP for certain categories and see how that affects the overall RFP
+    this might not be a 100% correct interpretation but that's what I got out of what she said
+    Sliders could be good here, or text inputs, maybe we should use angular along with d3 if possible
+
+4) finally, she's asked for a way to display real food alternatives to the user, these are in the second csv file
+    I don't really have any ideas on this yet, and I think this should be one of the last things we worry about
+
+
+Overall: I think this is definitely doable, and the plan I have right now is completely adaptable so feel free to pitch your own ideas.
+
+    Right now we should all focus on learning d3, I'll probably convert the csv files to JSON so we can actually access the data.
