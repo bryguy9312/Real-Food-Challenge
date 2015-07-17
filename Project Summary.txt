@@ -21,3 +21,10 @@ Here is an outline of what this visualization needs to do and how I'm planning o
 Overall: I think this is definitely doable, and the plan I have right now is completely adaptable so feel free to pitch your own ideas.
 
     Right now we should all focus on learning d3, I'll probably convert the csv files to JSON so we can actually access the data.
+
+
+
+    Here is a very basic Bar Graph example, very easy to code and with some modifications would be great for at least the overall school comparison
+    http://bl.ocks.org/Caged/6476579
+
+    also, pie charts might be a great way to display the data for an individual school
