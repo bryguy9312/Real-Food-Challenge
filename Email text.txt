@@ -1,0 +1,27 @@
+Hi Stephen, Eric, and Bryan, 
+
+I’m very excited to have you all take on a project for the Real Food Challenge (RFC) — this will contribute greatly to our organization.  At RFC, we work with colleges to improve their food purchasing practices, encouraging them to invest in “real food" (there's actually a campaign, currently, at UW!).  
+
+We have 4 measurements that dictate whether or not food is “real”:
+
+Local & Community Based
+Ecologically Sound
+Humanely produced
+Fair to producers
+Ultimately, we generate a "real food percentage" (dollars spent on "real" food, divided by total dollars spent). Most universities have between 5-20% real food.
+
+
+For this project, we’re interested in having you build interactive visualizations to explore a school’s purchasing practices.  In the first attachment (data.csv), you’ll see the primary dataset.  It includes a row for each food item purchased by a school for a given month.  If a food item meets any one of the four criteria listed above (local, fair, ecological, humane), it is considered real unless it has been disqualified for another reason (disqualified = “yes”).  For the visualization, we’re interested in exploring the following:
+
+What is the breakdown of real v.s. not real food by each product category (grocery vs produce vs meat, etc.)?
+How does the real food percentage of an individual category break down by it’s constituent food purchases?
+What is the breakdown of “real” purchasing according to the 4 measures (local, fair, ecological, humane)? E.g. if the total real food percentage is 18%, what portion of that is attributable to 'local' 'ecologically sound' etc.
+
+Once this visualization is built, we’re interested in asking counterfactual questions, like “If you redirected N dollars of a category to real food, what would the effect be on the total percentages”?  Having an interactive way to shift the dollars towards real food for a particular category would help us target specific purchasing practices for a university.  
+
+Finally, it's important to us to provide schools with alternative purchasing options.  In the second attachment (alternatives.csv), there are (fake) brands and vendors listed for each category that provide real food.  Ideally, it would be possible to display these alternatives when you’re looking at a particular category. 
+
+All of this being said, I want to make sure this is a successful project for your course, so take these guidelines as a starting point, and let me know if there is a particular direction you would like to explore. If I can provide you with additional information or feedback throughout the process, please be in touch.  Very excited to see what you develop!
+
+Emma 
+
