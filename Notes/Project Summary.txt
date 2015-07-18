@@ -49,6 +49,9 @@ http://faculty.washington.edu/mikefree/info343/lectures/d3_2/
 https://github.com/mkfreeman/scatter_template (rewritten solution below)
 https://github.com/mkfreeman/scatter_complete
 
+Other useful links:
+    http://nvd3.org << helps build charts in D3
+
 Categories:
     Baked
     Beverages
@@ -60,4 +63,6 @@ Categories:
     Poultry
     Produce
     Tea/Coffee
+
+
 

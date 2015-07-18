@@ -11,8 +11,16 @@ var debugMsg = function(msg) {
 d3.json("data/data.json", function(error, data){
     debugVars.data = data;
     debugMsg('Data Loaded!')
+    dataCategorize(data)
 });
 
 var dataCategorize =  function(data) {
-    data.map()
+    debugMsg('Categorizing data!');
+    var categorized = {};
+    data.map(function(entry){
+        var category = entry.Category;
+        categorized[category] = entry;
+    });
+    debugMsg('Data categorized!');
+    debugVars.categorized = categorized;
 }
