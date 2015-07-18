@@ -28,3 +28,16 @@ Overall: I think this is definitely doable, and the plan I have right now is com
     http://bl.ocks.org/Caged/6476579
 
     also, pie charts might be a great way to display the data for an individual school
+
+===================================================================================
+Stephen's Notes:
+
+JSON Import with D3:
+d3.json("temp.json", function(error, data){
+    //Asynchronous function, all manipulation should occur in here.
+});
+
+READ AND UNDERSTAND THE FOLLOWING:
+http://faculty.washington.edu/mikefree/info343/lectures/d3_2/
+https://github.com/mkfreeman/scatter_template (rewritten solution below)
+https://github.com/mkfreeman/scatter_complete
