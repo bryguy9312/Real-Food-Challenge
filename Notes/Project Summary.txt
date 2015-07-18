@@ -32,6 +32,10 @@ Overall: I think this is definitely doable, and the plan I have right now is com
 ===================================================================================
 Stephen's Notes:
 
+I think the data given to us is the school data too - showing what a school purchases. The way I envisioned this project was having several tabs (surprisingly easy with bootstrap)
+so that we could switch between various views, and then categories that could be selected. So for example: one view would show all the food categories and then upon clicking each
+button, you could see more specifics, such as what exactly is in the category, etc. I have a collection of really nice icons that could go with this (or anything really).
+
 JSON Import with D3:
 d3.json("temp.json", function(error, data){
     //Asynchronous function, all manipulation should occur in here.
@@ -41,3 +45,16 @@ READ AND UNDERSTAND THE FOLLOWING:
 http://faculty.washington.edu/mikefree/info343/lectures/d3_2/
 https://github.com/mkfreeman/scatter_template (rewritten solution below)
 https://github.com/mkfreeman/scatter_complete
+
+Categories:
+    Baked
+    Beverages
+    Dairy
+    Eggs
+    Fish
+    Grocery
+    Meat
+    Poultry
+    Produce
+    Tea/Coffee
+
