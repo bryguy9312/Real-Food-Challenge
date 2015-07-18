@@ -41,6 +41,9 @@ d3.json("temp.json", function(error, data){
     //Asynchronous function, all manipulation should occur in here.
 });
 
+JSON Notes:
+    Importing the JSON file puts the data into an array of objects (http://i.imgur.com/0tQqu89.png).
+
 READ AND UNDERSTAND THE FOLLOWING:
 http://faculty.washington.edu/mikefree/info343/lectures/d3_2/
 https://github.com/mkfreeman/scatter_template (rewritten solution below)
