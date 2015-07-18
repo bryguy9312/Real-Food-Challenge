@@ -1,0 +1,142 @@
+[
+  {
+    "Category": "baked",
+    "Brand": "baked Brand A",
+    "Vendor": "baked Vendor A"
+  },
+  {
+    "Category": "beverages",
+    "Brand": "beverages Brand A",
+    "Vendor": "beverages Vendor A"
+  },
+  {
+    "Category": "dairy",
+    "Brand": "dairy Brand A",
+    "Vendor": "dairy Vendor A"
+  },
+  {
+    "Category": "eggs",
+    "Brand": "eggs Brand A",
+    "Vendor": "eggs Vendor A"
+  },
+  {
+    "Category": "fish",
+    "Brand": "fish Brand A",
+    "Vendor": "fish Vendor A"
+  },
+  {
+    "Category": "grocery",
+    "Brand": "grocery Brand A",
+    "Vendor": "grocery Vendor A"
+  },
+  {
+    "Category": "meat",
+    "Brand": "meat Brand A",
+    "Vendor": "meat Vendor A"
+  },
+  {
+    "Category": "poultry",
+    "Brand": "poultry Brand A",
+    "Vendor": "poultry Vendor A"
+  },
+  {
+    "Category": "produce",
+    "Brand": "produce Brand A",
+    "Vendor": "produce Vendor A"
+  },
+  {
+    "Category": "teacoffee",
+    "Brand": "teacoffee Brand A",
+    "Vendor": "teacoffee Vendor A"
+  },
+  {
+    "Category": "baked",
+    "Brand": "baked Brand B",
+    "Vendor": "baked Vendor B"
+  },
+  {
+    "Category": "beverages",
+    "Brand": "beverages Brand B",
+    "Vendor": "beverages Vendor B"
+  },
+  {
+    "Category": "fish",
+    "Brand": "fish Brand B",
+    "Vendor": "fish Vendor B"
+  },
+  {
+    "Category": "grocery",
+    "Brand": "grocery Brand B",
+    "Vendor": "grocery Vendor B"
+  },
+  {
+    "Category": "meat",
+    "Brand": "meat Brand B",
+    "Vendor": "meat Vendor B"
+  },
+  {
+    "Category": "poultry",
+    "Brand": "poultry Brand B",
+    "Vendor": "poultry Vendor B"
+  },
+  {
+    "Category": "produce",
+    "Brand": "produce Brand B",
+    "Vendor": "produce Vendor B"
+  },
+  {
+    "Category": "teacoffee",
+    "Brand": "teacoffee Brand B",
+    "Vendor": "teacoffee Vendor B"
+  },
+  {
+    "Category": "baked",
+    "Brand": "baked Brand C",
+    "Vendor": "baked Vendor C"
+  },
+  {
+    "Category": "beverages",
+    "Brand": "beverages Brand C",
+    "Vendor": "beverages Vendor C"
+  },
+  {
+    "Category": "grocery",
+    "Brand": "grocery Brand C",
+    "Vendor": "grocery Vendor C"
+  },
+  {
+    "Category": "poultry",
+    "Brand": "poultry Brand C",
+    "Vendor": "poultry Vendor C"
+  },
+  {
+    "Category": "produce",
+    "Brand": "produce Brand C",
+    "Vendor": "produce Vendor C"
+  },
+  {
+    "Category": "teacoffee",
+    "Brand": "teacoffee Brand C",
+    "Vendor": "teacoffee Vendor C"
+  },
+  {
+    "Category": "baked",
+    "Brand": "baked Brand D",
+    "Vendor": "baked Vendor D"
+  },
+  {
+    "Category": "beverages",
+    "Brand": "beverages Brand D",
+    "Vendor": "beverages Vendor D"
+  },
+  {
+    "Category": "grocery",
+    "Brand": "grocery Brand D",
+    "Vendor": "grocery Vendor D"
+  },
+  {
+    "Category": "baked",
+    "Brand": "baked Brand E",
+    "Vendor": "baked Vendor E"
+  }
+]

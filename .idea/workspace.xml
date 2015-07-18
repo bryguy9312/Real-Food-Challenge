@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3e6a677-9e07-4db7-99ed-2194caf1c436" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notes/Project Summary.txt" afterPath="$PROJECT_DIR$/Notes/Project Summary.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Notes/testcode/data/alternatives.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Notes/testcode/data/alternatives.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Notes/testcode/data/data.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Notes/testcode/data/data.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Notes/testcode/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Notes/testcode/css/main.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Notes/testcode/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Real-Food-Challenge.iws" />
@@ -27,8 +33,8 @@
       <file leaf-file-name="Project Summary.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Notes/Project Summary.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6587729">
-              <caret line="36" column="170" selection-start-line="36" selection-start-column="170" selection-end-line="36" selection-end-column="170" />
+            <state vertical-scroll-proportion="0.20129171">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -39,66 +45,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="alternatives.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/alternatives.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-92.19231">
-              <caret line="141" column="1" selection-start-line="141" selection-start-column="1" selection-end-line="141" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="data.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/data.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="data.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/data.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-26252.576">
-              <caret line="40151" column="19" selection-start-line="40151" selection-start-column="19" selection-end-line="40151" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.384615">
-              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -196,6 +142,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Notes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Real-Food-Challenge" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Real-Food-Challenge" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Notes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testcode" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -319,14 +283,20 @@
       <option name="project" value="LOCAL" />
       <updated>1437245495496</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added more notes">
+      <created>1437246450763</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1437246450763</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09739583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09739583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -364,7 +334,8 @@
     <MESSAGE value="Initilized core files" />
     <MESSAGE value="Created notes folder." />
     <MESSAGE value="Added some notes of my own" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some notes of my own" />
+    <MESSAGE value="Added more notes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added more notes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -453,8 +424,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Notes/Project Summary.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6587729">
-          <caret line="36" column="170" selection-start-line="36" selection-start-column="170" selection-end-line="36" selection-end-column="170" />
+        <state vertical-scroll-proportion="0.20129171">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
