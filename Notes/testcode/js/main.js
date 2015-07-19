@@ -14,8 +14,22 @@ d3.json("data/data.json", function(error, data){
     debugMsg('Data Loaded!')
     var categorized = dataCategorize(data)
     var initialData = initData(categorized);
+
+    var categoryResults = {};
+    // Loops through each of the categories and breaks them down into the four components of real food.
+    for(category in categorized) {
+        var realFoodData = realData(categorized[category]);
+        categoryResults[category] = realFoodData;
+    }
+    debugVars.categoryResults = categoryResults;
+
 });
 
+/**
+ * Organizes the raw data into categories.
+ * @param {Object[]} data - The raw data from the json file.
+ * @return {Object[]} categorized - The data sorted into categories.
+ */
 var dataCategorize =  function(data) {
     debugMsg('Categorizing data!');
     var categorized = {};
@@ -32,13 +46,18 @@ var dataCategorize =  function(data) {
     return categorized;
 };
 
+/**
+ * Creates the data for Real Food Value.
+ * @param {Object[]} data - The categorized data.
+ * @return {Object[]} initialData - Calculated Real Food Value totals.
+ */
 var initData = function(data) {
     debugMsg('Creating initial data!');
     var initialData = {};
     // Iterates through each category
     for (var category in data) {
+        // Checks that the key exists in the data set
         if (data.hasOwnProperty(category)) {
-            debugVars.category = category;
             var realFood = 0;
             var fakeFood = 0;
             // Iterates through each food item
@@ -61,6 +80,44 @@ var initData = function(data) {
     return initialData;
 };
 
+/**
+ * Breaks down real food into the four categories (Local, Fair, Ecological, Humane).
+ * NOTE: Duplicates are added, so there is a chance that you will go over 100%. Still pending fix.
+ * @param {Object[]} category - An organized category.
+ * @return {Object[]} categorized - The total amount of real food divided into the categories.
+ */
+var realData = function(category) {
+    //debugMsg('Creating real data!');
+    var realFood = {
+        'local' : 0,
+        'fair' : 0,
+        'ecological' : 0,
+        'humane': 0,
+        'total' : 0
+    }
+    category.map(function(food) {
+       if(checkRealFood(food)) {
+           if(food.Local == 'yes')
+               realFood.local += parseFloat(food.Cost);
+           if(food.Fair == 'yes')
+               realFood.fair += parseFloat(food.Cost);
+           if(food.Ecological == 'yes')
+               realFood.ecological += parseFloat(food.Cost);
+           if(food.Humane == 'yes')
+               realFood.humane += parseFloat(food.Cost);
+           realFood.total += parseFloat(food.Cost);
+       }
+    });
+    debugVars.realFood = realFood;
+    //debugMsg('Real data created!');
+    return realFood;
+}
+
+/**
+ * Creates the data for Real Food Value.
+ * @param {Object[]} data - The categorized data.
+ * @return {Object[]} initialData - Calculated Real Food Value totals.
+ */
 var checkRealFood = function(entry) {
     if (entry.Disqualifier == 'yes')
         return false;
