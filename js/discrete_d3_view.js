@@ -39,3 +39,5 @@ View.prototype.build = function() {
 View.prototype.buildControls = function() {
     //no controls yet
 };
+
+debugVars.barsGraph = new BarGraph({data:data});
