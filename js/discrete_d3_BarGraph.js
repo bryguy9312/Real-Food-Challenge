@@ -1,0 +1,106 @@
+var data = {};
+var BarGraph = function(settings){
+    var self = this;
+    self.defaults = {
+        margin: {
+            left:50,
+            bottom: 100,
+            top: 50,
+            right: 50
+        },
+        xVar: 'category',
+        yVar: 'RFP',
+        width: 25
+    };
+    self.settings = $.extend(false, self.defaults, settings);
+    self.settings.height = 400 - self.settings.margin.bottom - self.settings.margin.top;
+    self.settings.width  = 400 - self.settings.margin.left - self.settings.margin.right;
+
+    self.rectFunc = function(rect) {
+        rect.attr('width', self.width)
+            .attr('height', function(d) {return self.xScale(d.realFood / d.totalFood)})
+            .attr('fill', 'blue')
+            .attr('x', function(d, index) {
+                return index * (self.width + self.margin.right)
+            })
+            .attr('y', function(d) {
+                return d;
+            })
+            .attr('title', function(d) {
+                 return d.category + ": $" + (d.realFood/ d.totalFood);
+            });
+    };
+
+    self.build();
+};
+
+BarGraph.prototype.setScales = function() {
+    debugMsg('setting scales');
+    var self = this;
+    var yMin = 0;
+    var yMax = 100;
+
+    self.xScale = d3.scale.linear().range([0, self.settings.width]).domain([0, self.settings.width]);
+    self.yScale = d3.scale.linear().range([self.settings.height, 0]).domain([yMin, yMax]);
+
+    self.xAxis = d3.svg.axis().scale(self.xScale).orient('bottom');
+    self.yAxis = d3.svg.axis().scale(self.yScale).orient('left');
+    debugMsg('scales set');
+};
+
+BarGraph.prototype.build = function() {
+    debugMsg('building');
+    var self = this;
+    //creates a 400x400 svg in the body, this will need to be modified to fit in the final html
+    self.svg = d3.select('body').append('svg').attr('height', 400).attr('width', 400);
+
+    //G for bars
+    self.g = self.svg.append('g')
+        .attr('transform', 'translate(' + self.settings.margin.left + ',' + self.settings.margin.top + ')')
+        .attr('height', self.settings.height)
+        .attr('width', self.settings.width);
+
+    //G for x axis
+    self.xAxisG = self.svg.append('g')
+        .attr('transform', 'translate(' + self.settings.margin.left + ',' + (self.settings.height + self.settings.margin.top) + ')')
+        .attr('class', 'axis');
+
+    //G for y axis
+    self.yAxisG = self.svg.append('g')
+        .attr('transform', 'translate(' + self.settings.margin.left + ',' + (self.settings.margin.top) + ')')
+        .attr('class', 'axis');
+
+    self.draw();
+    self.addHover();
+    debugMsg('building done');
+};
+
+BarGraph.prototype.draw = function() {
+    debugMsg('drawing');
+    var self = this;
+    self.setScales();
+    // bind self.settings.data
+    debugMsg('binding data to rectangles');
+    var bars = self.g.selectAll('rect').data(self.settings.data);
+    debugMsg("data is bound to rectangles, logging bound data");
+    console.log(self.settings.data);
+    //enter new elements
+    bars.enter().append('rect').call(self.rectFunc);
+    // exit elements that may have left
+    bars.exit().remove();
+    //transition all rects to new self.settings.data??
+    self.g.selectAll('rect').transition().duration(1500).call(self.rectFunc);
+
+    self.xAxisG.call(self.xAxis);
+    self.yAxisG.call(self.yAxis);
+    debugMsg('drawing done');
+};
+
+BarGraph.prototype.addHover = function() {
+    $('rect').tooltip({
+        'container': 'body',
+        'placement': 'bottom'
+    })
+};
+
+

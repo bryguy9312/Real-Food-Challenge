@@ -8,13 +8,12 @@ var debugMsg = function(msg) {
 };
 
 //Asynchronous function, all manipulation should occur in here.
-debugMsg('Data Loading!')
+debugMsg('Data Loading!');
 d3.json("data/data.json", function(error, data){
     debugVars.data = data;
-    debugMsg('Data Loaded!')
-    var categorized = dataCategorize(data)
+    debugMsg('Data Loaded!');
+    var categorized = dataCategorize(data);
     var initialData = initData(categorized);
-
     var categoryResults = {};
     // Loops through each of the categories and breaks them down into the four components of real food.
     for(category in categorized) {
@@ -22,6 +21,9 @@ d3.json("data/data.json", function(error, data){
         categoryResults[category] = realFoodData;
     }
     debugVars.categoryResults = categoryResults;
+
+    //method to contain all graphing
+
 
 });
 
@@ -94,7 +96,7 @@ var realData = function(category) {
         'ecological' : 0,
         'humane': 0,
         'total' : 0
-    }
+    };
     category.map(function(food) {
        if(checkRealFood(food)) {
            if(food.Local == 'yes')
@@ -111,7 +113,7 @@ var realData = function(category) {
     debugVars.realFood = realFood;
     //debugMsg('Real data created!');
     return realFood;
-}
+};
 
 /**
  * Creates the data for Real Food Value.
@@ -122,7 +124,7 @@ var checkRealFood = function(entry) {
     if (entry.Disqualifier == 'yes')
         return false;
     return (entry.Local == 'yes' || entry.Fair == 'yes' || entry.Ecological == 'yes' || entry.Humane == 'yes');
-}
+};
 
 /*
 Category 1: Initial Data #rfpover!rfp
