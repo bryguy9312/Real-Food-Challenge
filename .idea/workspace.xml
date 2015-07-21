@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b3e6a677-9e07-4db7-99ed-2194caf1c436" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/discrete_d3_BarGraph.js" afterPath="$PROJECT_DIR$/js/discrete_d3_BarGraph.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/discrete_d3_view.js" afterPath="$PROJECT_DIR$/js/discrete_d3_view.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -29,11 +27,11 @@
     <splitter split-orientation="vertical" split-proportion="0.83716476">
       <split-first>
         <leaf>
-          <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+                <state vertical-scroll-proportion="0.5673421">
+                  <caret line="76" column="45" selection-start-line="76" selection-start-column="45" selection-end-line="76" selection-end-column="45" />
                   <folding />
                 </state>
               </provider>
@@ -42,18 +40,18 @@
           <file leaf-file-name="discrete_d3_BarGraph.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/discrete_d3_BarGraph.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-12.310345">
-                  <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="69" column="25" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="discrete_d3_view.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="discrete_d3_view.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/discrete_d3_view.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.20262218">
-                  <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+                <state vertical-scroll-proportion="-3.8965516">
+                  <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
@@ -137,10 +135,10 @@
         <option value="$PROJECT_DIR$/Notes/testcode/index.html" />
         <option value="$PROJECT_DIR$/Notes/d3.txt" />
         <option value="$PROJECT_DIR$/Notes/testcode/js/main.js" />
-        <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/discrete_d3_BarGraph.js" />
         <option value="$PROJECT_DIR$/js/discrete_d3_view.js" />
+        <option value="$PROJECT_DIR$/js/discrete_d3_BarGraph.js" />
+        <option value="$PROJECT_DIR$/js/main.js" />
       </list>
     </option>
   </component>
@@ -425,7 +423,13 @@
       <option name="project" value="LOCAL" />
       <updated>1437451050218</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Graph scales properly lol jk">
+      <created>1437457689359</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1437457689359</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -503,7 +507,8 @@
     <MESSAGE value="Most of view 1 is coded, need to debug bars not drawing" />
     <MESSAGE value="Graph now properly draws - scales are horribly incorrect though." />
     <MESSAGE value="Graph scales properly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Graph scales properly" />
+    <MESSAGE value="Graph scales properly lol jk" />
+    <option name="LAST_COMMIT_MESSAGE" value="Graph scales properly lol jk" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -881,26 +886,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/discrete_d3_BarGraph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.310345">
-          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="69" column="25" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/discrete_d3_view.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20262218">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+        <state vertical-scroll-proportion="-3.8965516">
+          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5673421">
+          <caret line="76" column="45" selection-start-line="76" selection-start-column="45" selection-end-line="76" selection-end-column="45" />
           <folding />
         </state>
       </provider>
