@@ -11,12 +11,13 @@ var BarGraph = function(settings){
             right: 50
         },
         xVar: 'category',
-        yVar: 'rfp'
+        yVar: 'rfp',
+        hoverTitle: 'rfp(%):'
     };
     self.settings = $.extend(false, self.defaults, settings);
     self.settings.height = 400 - self.settings.margin.bottom - self.settings.margin.top;
     self.settings.width  = 400 - self.settings.margin.left - self.settings.margin.right;
-
+    console.log("VIEW VARIABLES: " + self.settings.yVar + ", " + self.settings.hoverTitle);
     self.rectFunc = function(rect) {
         debugMsg('=======rectFunc executing=======');
         debugMsg('self.width: ' + self.settings.width);
@@ -27,18 +28,18 @@ var BarGraph = function(settings){
 
         rect.attr('width', self.xScale(20))
             .attr('height', function(d) {
-                return self.settings.height - self.yScale(d.rfp)
+                return self.settings.height - self.yScale(d[self.settings.yVar])
             })
             .attr('fill', 'blue')
             .attr('x', function(d, index) {
                 return  (self.xScale((index * 30)));
             })
             .attr('y', function(d) {
-                return (self.yScale(d.rfp));
+                return (self.yScale(d[self.settings.yVar]));
             })
             .attr('title', function(d) {
                 debugMsg('rectFunc title');
-                 return d.category + ": $" + d.realFood + "(" + d.rfp + "%)";
+                 return self.settings.hoverTitle + d[self.settings.yVar];
             });
         debugMsg('=======rectFunc ending=======')
     };
