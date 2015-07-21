@@ -74,7 +74,7 @@ var initData = function(data) {
                 'realFood' : realFood,
                 'fakeFood' : fakeFood,
                 'totalFood' : realFood + fakeFood,
-                'rfp' : (realFood / totalFood) * 100
+                'rfp' : (realFood / (realFood + fakeFood)) * 100
             })
         } else
             debugMsg("Execution error! Unidentified key passed!")
