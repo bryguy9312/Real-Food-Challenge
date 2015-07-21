@@ -87,3 +87,25 @@ each object will look like this:
 }
 
 actually, I'll need ecological, fair, etc in its own array and then inside of that array will be items and alternatives, this way I can pass the array as a setting to create a new View and BarGraph...
+Look at the test data I used in View, that is exactly what I need with the addition of the array of items if we are going to use them (which I think we should)
+
+
+TODO: (BRYAN)
+    after data is formatted, I need to adjust code for ajax calls
+    Need to fix x axis still (will probably remove the ticks and just use labels or whatever it's called in d3)
+    Need to adjust width of individual rectangles, width should be proportional to chart size and how many rects there are
+    Need to clear the #svg2 html whenever a bar in #svg1 is clicked (also, need to initialize with total data instead of baked goods)
+        this code will probably need further adjustment based on what eric is going to do
+    Code needs to be cleaned up in general... it is very messy and I don't like it (Mine, Stephen's is awesome)
+
+TODO: (Steven)
+    Please format the data as specified above, that's really all we need to get this working for the entire data set
+    Probably remove the json stuff from main.js, I don't think it's actually being used now that we are calling for data in View instead
+    Adjusting the ajax to use d3.csv() instead of json would be very nice
+
+TODO: (General)
+    we should probably remove debug stuff before sending it to emma
+    we need to implement some basic user controls if possible
+    I'd really like to display the items in a category when it is clicked on in the second graph, along with the relevant alternatives she provided
+    Eric needs to do the styling and stuff, not sure what he's done so far or what
+
