@@ -87,3 +87,5 @@ each object will look like this:
 }
 
 actually, I'll need ecological, fair, etc in its own array and then inside of that array will be items and alternatives, this way I can pass the array as a setting to create a new View and BarGraph...
+
+DOES THIS WORK!??
