@@ -29,7 +29,7 @@ var BarGraph = function(settings){
         rect.attr('width', self.xScale(20))
 
             .attr('height', function(d) {
-                return self.xScale((d.realFood / d.totalFood) * 100)
+                return self.settings.height - self.yScale((d.realFood / d.totalFood) * 100)
             })
 
             .attr('fill', 'blue')
@@ -38,13 +38,13 @@ var BarGraph = function(settings){
                 return  (self.xScale((index * 30)));
             })
 
-            .attr('y', function(d, index) {
-                return (self.settings.height - self.xScale((d.realFood / d.totalFood) * 100));
+            .attr('y', function(d) {
+                return (self.yScale((d.realFood / d.totalFood) * 100));
             })
 
             .attr('title', function(d) {
                 debugMsg('rectFunc title');
-                 return d.category + ": $" + (d.realFood/ d.totalFood);
+                 return d.category + ": $" + d.realFood;
             });
         debugMsg('=======rectFunc ending=======')
     };
@@ -60,7 +60,7 @@ BarGraph.prototype.setScales = function() {
 
     self.xScale = d3.scale.linear().range([0, self.settings.width]).domain([0, self.settings.width]);
     self.yScale = d3.scale.linear().range([self.settings.height, 0]).domain([yMin, yMax]);
-
+    debugVars.yScale = self.yScale;
     self.xAxis = d3.svg.axis().scale(self.xScale).orient('bottom');
     self.yAxis = d3.svg.axis().scale(self.yScale).orient('left');
     debugMsg('scales set');
