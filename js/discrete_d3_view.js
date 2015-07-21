@@ -7,11 +7,10 @@ var View = function(settings) {
 
 View.prototype.build = function() {
     var self = this;
-    //TEST DATA, NEED TO PASS IN REAL DATA
-    d3.json("data/data.json", function(error, data){
-        debugVars.data = data;
+    d3.json("data/data.json", function(error, response){
+        debugVars.data = response;
         debugMsg('Data Loaded!');
-        var categorized = dataCategorize(data)
+        var categorized = dataCategorize(response)
         var initialData = initData(categorized);
         var categoryResults = {};
         // Loops through each of the categories and breaks them down into the four components of real food.
@@ -20,6 +19,8 @@ View.prototype.build = function() {
             categoryResults[category] = realFoodData;
         }
         debugVars.categoryResults = categoryResults;
+
+        data = initialData;
 
         //method to contain all graphing
         var bindData = merge_options(initialData, categoryResults);

@@ -23,8 +23,7 @@ d3.json("data/data.json", function(error, data){
     debugVars.categoryResults = categoryResults;
 
     //method to contain all graphing
-    var bindData = merge_options(initialData, categoryResults);
-    debugVars.bindData = bindData;
+    var view = new View();
 
 });
 
@@ -74,7 +73,8 @@ var initData = function(data) {
                 'category' : category,
                 'realFood' : realFood,
                 'fakeFood' : fakeFood,
-                'totalFood' : realFood + fakeFood
+                'totalFood' : realFood + fakeFood,
+                'rfp' : (realFood / fakeFood) * 100
             })
         } else
             debugMsg("Execution error! Unidentified key passed!")

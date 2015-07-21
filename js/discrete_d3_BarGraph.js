@@ -1,6 +1,6 @@
 "use strict";
 
-var data = {};
+var data;
 var BarGraph = function(settings){
     var self = this;
     self.defaults = {
@@ -11,15 +11,14 @@ var BarGraph = function(settings){
             right: 50
         },
         xVar: 'category',
-        yVar: 'RFP',
-        width: 25
+        yVar: 'rfp'
     };
     self.settings = $.extend(false, self.defaults, settings);
     self.settings.height = 400 - self.settings.margin.bottom - self.settings.margin.top;
     self.settings.width  = 400 - self.settings.margin.left - self.settings.margin.right;
 
     self.rectFunc = function(rect) {
-        debugMsg('=======rectFunc executing=======')
+        debugMsg('=======rectFunc executing=======');
         debugMsg('self.width: ' + self.settings.width);
         debugMsg('self.index: ' + self.settings.index);
         debugMsg('self.margin.right: ' + self.settings.margin.right);
@@ -29,7 +28,7 @@ var BarGraph = function(settings){
         rect.attr('width', self.xScale(20))
 
             .attr('height', function(d) {
-                return self.settings.height - self.yScale((d.realFood / d.totalFood) * 100)
+                return self.settings.height - self.yScale(d.rfp)
             })
 
             .attr('fill', 'blue')
@@ -39,12 +38,12 @@ var BarGraph = function(settings){
             })
 
             .attr('y', function(d) {
-                return (self.yScale((d.realFood / d.totalFood) * 100));
+                return (self.yScale(d.rfp));
             })
 
             .attr('title', function(d) {
                 debugMsg('rectFunc title');
-                 return d.category + ": $" + d.realFood;
+                 return d.category + ": $" + d.realFood + "(" + d.rfp + "%)";
             });
         debugMsg('=======rectFunc ending=======')
     };
@@ -56,7 +55,8 @@ BarGraph.prototype.setScales = function() {
     debugMsg('setting scales');
     var self = this;
     var yMin = 0;
-    var yMax = 100;
+    console.log(data);
+    var yMax = d3.max(data, function(d) { return (d[self.settings.yVar])});
 
     self.xScale = d3.scale.linear().range([0, self.settings.width]).domain([0, self.settings.width]);
     self.yScale = d3.scale.linear().range([self.settings.height, 0]).domain([yMin, yMax]);
