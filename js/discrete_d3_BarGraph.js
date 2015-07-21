@@ -26,20 +26,20 @@ var BarGraph = function(settings){
         console.log(self.settings.data);
         console.log(rect);
 
-        rect.attr('width', self.xScale(15))
+        rect.attr('width', self.xScale(20))
 
             .attr('height', function(d) {
-                return self.xScale((d.realFood / d.totalFood) * 1000)
+                return self.xScale((d.realFood / d.totalFood) * 100)
             })
 
             .attr('fill', 'blue')
 
             .attr('x', function(d, index) {
-                return  (self.xScale((index * 20)));
+                return  (self.xScale((index * 30)));
             })
 
             .attr('y', function(d, index) {
-                return (self.settings.height - self.xScale((d.realFood / d.totalFood) * 1000));
+                return (self.settings.height - self.xScale((d.realFood / d.totalFood) * 100));
             })
 
             .attr('title', function(d) {

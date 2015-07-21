@@ -8,7 +8,26 @@ var View = function(settings) {
 View.prototype.build = function() {
     var self = this;
     //TEST DATA, NEED TO PASS IN REAL DATA
-    data = [
+    d3.json("data/data.json", function(error, data){
+        debugVars.data = data;
+        debugMsg('Data Loaded!');
+        var categorized = dataCategorize(data)
+        var initialData = initData(categorized);
+        var categoryResults = {};
+        // Loops through each of the categories and breaks them down into the four components of real food.
+        for(category in categorized) {
+            var realFoodData = realData(categorized[category]);
+            categoryResults[category] = realFoodData;
+        }
+        debugVars.categoryResults = categoryResults;
+
+        //method to contain all graphing
+        var bindData = merge_options(initialData, categoryResults);
+        self.charts.push(new BarGraph({data:initialData}));
+        self.buildControls();
+
+    });
+    /*data = [
                 {
                     'category': 'baked',
                     'fakeFood': 32225,
@@ -33,7 +52,7 @@ View.prototype.build = function() {
                 }
             ]
     self.charts.push(new BarGraph({data:data}));
-    self.buildControls();
+    self.buildControls();*/
 };
 
 View.prototype.buildControls = function() {

@@ -56,7 +56,7 @@ var dataCategorize =  function(data) {
  */
 var initData = function(data) {
     debugMsg('Creating initial data!');
-    var initialData = {};
+    var initialData = [];
     // Iterates through each category
     for (var category in data) {
         // Checks that the key exists in the data set
@@ -70,11 +70,12 @@ var initData = function(data) {
                 else
                     fakeFood += parseFloat(food.Cost);
             });
-            initialData[category] = {
+            initialData.push({
+                'category' : category,
                 'realFood' : realFood,
                 'fakeFood' : fakeFood,
                 'totalFood' : realFood + fakeFood
-            }
+            })
         } else
             debugMsg("Execution error! Unidentified key passed!")
     }
