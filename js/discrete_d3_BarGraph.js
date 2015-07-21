@@ -1,3 +1,5 @@
+"use strict";
+
 var data = {};
 var BarGraph = function(settings){
     var self = this;
@@ -17,18 +19,34 @@ var BarGraph = function(settings){
     self.settings.width  = 400 - self.settings.margin.left - self.settings.margin.right;
 
     self.rectFunc = function(rect) {
-        rect.attr('width', self.width)
-            .attr('height', function(d) {return self.xScale(d.realFood / d.totalFood)})
+        debugMsg('=======rectFunc executing=======')
+        debugMsg('self.width: ' + self.settings.width);
+        debugMsg('self.index: ' + self.settings.index);
+        debugMsg('self.margin.right: ' + self.settings.margin.right);
+        console.log(self.settings.data);
+        console.log(rect);
+
+        rect.attr('width', self.xScale(20))
+
+            .attr('height', function(d) {
+                return self.xScale((d.realFood / d.totalFood) * 100)
+            })
+
             .attr('fill', 'blue')
+
             .attr('x', function(d, index) {
-                return index * (self.width + self.margin.right)
+                return  (self.xScale((index * 30)));
             })
-            .attr('y', function(d) {
-                return d;
+
+            .attr('y', function(d, index) {
+                return (self.settings.height - self.xScale((d.realFood / d.totalFood) * 100));
             })
+
             .attr('title', function(d) {
+                debugMsg('rectFunc title');
                  return d.category + ": $" + (d.realFood/ d.totalFood);
             });
+        debugMsg('=======rectFunc ending=======')
     };
 
     self.build();
@@ -59,6 +77,7 @@ BarGraph.prototype.build = function() {
         .attr('transform', 'translate(' + self.settings.margin.left + ',' + self.settings.margin.top + ')')
         .attr('height', self.settings.height)
         .attr('width', self.settings.width);
+    debugVars.g = self.g;
 
     //G for x axis
     self.xAxisG = self.svg.append('g')
@@ -86,6 +105,7 @@ BarGraph.prototype.draw = function() {
     console.log(self.settings.data);
     //enter new elements
     bars.enter().append('rect').call(self.rectFunc);
+    console.log(bars);
     // exit elements that may have left
     bars.exit().remove();
     //transition all rects to new self.settings.data??
@@ -94,6 +114,7 @@ BarGraph.prototype.draw = function() {
     self.xAxisG.call(self.xAxis);
     self.yAxisG.call(self.yAxis);
     debugMsg('drawing done');
+    debugVars.self = self;
 };
 
 BarGraph.prototype.addHover = function() {
@@ -102,5 +123,4 @@ BarGraph.prototype.addHover = function() {
         'placement': 'bottom'
     })
 };
-
 
