@@ -7,7 +7,7 @@ var View = function(settings) {
 
 View.prototype.build = function() {
     var self = this;
-    d3.json("data/data.json", function(error, response){
+    /*d3.json("data/data.json", function(error, response){
         debugVars.data = response;
         debugMsg('Data Loaded!');
         var categorized = dataCategorize(response)
@@ -23,37 +23,99 @@ View.prototype.build = function() {
         data = initialData;
 
         //method to contain all graphing
-        var bindData = merge_options(initialData, categoryResults);
-        self.charts.push(new BarGraph({data:initialData}));
-        self.buildControls();
-
-    });
-    /*data = [
+        var bindData = merge_options(initialData, categoryResults);*/
+    data = [
+        {
+            'category': 'baked',
+            'fakeFood': 32225,
+            'realFood': 391,
+            'totalFood': 32616,
+            'total': 391.68,
+            'rfp': 9.78,
+            'categories':
+            [
                 {
-                    'category': 'baked',
-                    'fakeFood': 32225,
-                    'realFood': 391,
-                    'totalFood': 32616,
-                    'ecological': 391.68,
-                    'fair': 0,
-                    'humane': 0,
-                    'local': 0,
-                    'total': 391.68
+                    'category': 'ecological',
+                    'cost': 391.68
                 },
                 {
-                    'category': 'beverages',
-                    'fakeFood': 67297,
-                    'realFood': 7303,
-                    'totalFood': 74600,
-                    'ecological': 6912,
-                    'fair': 2916,
-                    'humane': 0,
-                    'local': 269,
-                    'total': 7303
+                    'category': 'fair',
+                    'cost': 0
+                },
+                {
+                    'category': 'humane',
+                    'cost': 0
+                },
+                {
+                    'category': 'local',
+                    'cost': 0
+                },
+                {
+                    'category': 'total',
+                    'cost': 391.68
                 }
-            ]
-    self.charts.push(new BarGraph({data:data}));
-    self.buildControls();*/
+                ]
+        },
+        {
+            'category': 'beverages',
+            'fakeFood': 67297,
+            'realFood': 7303,
+            'totalFood': 74600,
+            'rfp': 72.225,
+            'categories':
+                [
+                    {
+                        'category': 'ecological',
+                        'cost': 6912
+                    },
+                    {
+                        'category': 'fair',
+                        'cost': 2916
+                    },
+                    {
+                        'category': 'humane',
+                        'cost': 0
+                    },
+                    {
+                        'category': 'local',
+                        'cost': 269
+                    },
+                    {
+                        'category': 'total',
+                        'cost': 7303
+                    }
+                ]
+
+        }
+    ];
+    //View 1 BarGraph
+    self.charts.push(new BarGraph({
+        data:data
+    }));
+    //This needs to be changed so that it implements
+    self.charts.push(new BarGraph({
+        data:data[0].categories,
+        yVar: 'cost',
+        hoverTitle: 'cost($): ',
+        id: 'svg2'
+    }));
+
+    d3.select('#svg1').selectAll('rect').on('click', function(d) {
+       self.charts.push(new BarGraph({
+           data: d.categories,
+           yVar: 'cost',
+           hoverTitle: 'cost($)',
+           id: 'svg2'
+       }));
+    });
+    //View 2 BarGraph
+
+    self.buildControls();
+
+      /*  self.charts.push(new BarGraph({data:initialData}));
+        self.buildControls();
+
+    });*/
 };
 
 View.prototype.buildControls = function() {

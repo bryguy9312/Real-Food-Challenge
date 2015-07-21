@@ -1,5 +1,6 @@
 "use strict";
 
+
 var data;
 var BarGraph = function(settings){
     var self = this;
@@ -11,12 +12,14 @@ var BarGraph = function(settings){
             right: 50
         },
         xVar: 'category',
-        yVar: 'rfp'
+        yVar: 'rfp',
+        hoverTitle: 'rfp(%):',
+        id: "svg1"
     };
     self.settings = $.extend(false, self.defaults, settings);
     self.settings.height = 400 - self.settings.margin.bottom - self.settings.margin.top;
     self.settings.width  = 400 - self.settings.margin.left - self.settings.margin.right;
-
+    console.log("VIEW VARIABLES: " + self.settings.yVar + ", " + self.settings.hoverTitle);
     self.rectFunc = function(rect) {
         debugMsg('=======rectFunc executing=======');
         debugMsg('self.width: ' + self.settings.width);
@@ -27,18 +30,18 @@ var BarGraph = function(settings){
 
         rect.attr('width', self.xScale(20))
             .attr('height', function(d) {
-                return self.settings.height - self.yScale(d.rfp)
+                return self.settings.height - self.yScale(d[self.settings.yVar])
             })
             .attr('fill', 'blue')
             .attr('x', function(d, index) {
                 return  (self.xScale((index * 30)));
             })
             .attr('y', function(d) {
-                return (self.yScale(d.rfp));
+                return (self.yScale(d[self.settings.yVar]));
             })
             .attr('title', function(d) {
                 debugMsg('rectFunc title');
-                 return d.category + ": $" + d.realFood + "(" + d.rfp + "%)";
+                 return self.settings.hoverTitle + d[self.settings.yVar];
             });
         debugMsg('=======rectFunc ending=======')
     };
@@ -50,8 +53,8 @@ BarGraph.prototype.setScales = function() {
     debugMsg('setting scales');
     var self = this;
     var yMin = 0;
-    console.log(data);
-    var yMax = d3.max(data, function(d) { return (d[self.settings.yVar])});
+    //console.log(data);
+    var yMax = d3.max(self.settings.data, function(d) { return (d[self.settings.yVar])});
 
     self.xScale = d3.scale.linear().range([0, self.settings.width]).domain([0, self.settings.width]);
     self.yScale = d3.scale.linear().range([self.settings.height, 0]).domain([yMin, yMax]);
@@ -65,7 +68,7 @@ BarGraph.prototype.build = function() {
     debugMsg('building');
     var self = this;
     //creates a 400x400 svg in the body, this will need to be modified to fit in the final html
-    self.svg = d3.select('body').append('svg').attr('height', 400).attr('width', 400);
+    self.svg = d3.select('body').append('svg').attr('height', 400).attr('width', 400).attr('id', this.settings.id);
 
     //G for bars
     self.g = self.svg.append('g')
@@ -118,4 +121,5 @@ BarGraph.prototype.addHover = function() {
         'placement': 'bottom'
     })
 };
+
 

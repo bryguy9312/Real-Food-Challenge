@@ -12,7 +12,7 @@ debugMsg('Data Loading!');
 d3.json("data/data.json", function(error, data){
     debugVars.data = data;
     debugMsg('Data Loaded!');
-    var categorized = dataCategorize(data)
+    var categorized = dataCategorize(data);
     var initialData = initData(categorized);
     var categoryResults = {};
     // Loops through each of the categories and breaks them down into the four components of real food.
