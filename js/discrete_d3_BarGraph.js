@@ -22,27 +22,24 @@ var BarGraph = function(settings){
         debugMsg('=======rectFunc executing=======')
         debugMsg('self.width: ' + self.settings.width);
         debugMsg('self.index: ' + self.settings.index);
-        debugMsg('self.margin.right: ' + self.defaults.margin.right);
+        debugMsg('self.margin.right: ' + self.settings.margin.right);
         console.log(self.settings.data);
         console.log(rect);
 
-        rect.attr('width', self.settings.width)
+        rect.attr('width', self.xScale(15))
 
             .attr('height', function(d) {
-                debugMsg('rectFunc Height');
-                return self.xScale(d.realFood / d.totalFood)
+                return self.xScale((d.realFood / d.totalFood) * 1000)
             })
 
             .attr('fill', 'blue')
 
             .attr('x', function(d, index) {
-                debugMsg('rectFunc x');
-                return index * (self.width + self.margin.right)
+                return  (self.xScale((index * 20)));
             })
 
-            .attr('y', function(d) {
-                debugMsg('rectFunc y');
-                return d;
+            .attr('y', function(d, index) {
+                return (self.settings.height - self.xScale((d.realFood / d.totalFood) * 1000));
             })
 
             .attr('title', function(d) {
