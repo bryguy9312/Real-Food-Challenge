@@ -66,3 +66,24 @@ Categories:
 
 
 
+
+BIND DATA::
+
+array of objects
+
+each object will look like this:
+
+{
+    'category': 'baked',
+    'fakeFood': 32225,
+    'realFood': 391,
+    'totalFood': 32616,
+    'ecological': 391.68,
+    'fair': 0,
+    'humane': 0,
+    'local': 0,
+    'total': 391.68,
+    'items': {{array of items}} // not really sure about this one, it really depends on how we want to display the items, but we'll probably also need to include the items from alternatives as well
+}
+
+actually, I'll need ecological, fair, etc in its own array and then inside of that array will be items and alternatives, this way I can pass the array as a setting to create a new View and BarGraph...

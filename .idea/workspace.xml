@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3e6a677-9e07-4db7-99ed-2194caf1c436" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/discrete_d3_BarGraph.js" afterPath="$PROJECT_DIR$/js/discrete_d3_BarGraph.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notes/Project Summary.txt" afterPath="$PROJECT_DIR$/Notes/Project Summary.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Real-Food-Challenge.iws" />
@@ -24,24 +23,24 @@
     <favorites_list name="Real-Food-Challenge" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.8314176">
+    <splitter split-orientation="vertical" split-proportion="0.9">
       <split-first>
         <leaf>
           <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="76" column="57" selection-start-line="76" selection-start-column="57" selection-end-line="76" selection-end-column="57" />
+                  <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="136" selection-end-column="2" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="discrete_d3_BarGraph.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="discrete_d3_BarGraph.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/discrete_d3_BarGraph.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.30612245">
-                  <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -50,18 +49,18 @@
           <file leaf-file-name="discrete_d3_view.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/discrete_d3_view.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-3.8965516">
-                  <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Project Summary.txt" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Project Summary.txt" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Notes/Project Summary.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="57" column="9" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
+                <state vertical-scroll-proportion="0.49225664">
+                  <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -84,8 +83,8 @@
           <file leaf-file-name="data.json" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/data/data.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="40166" column="4" selection-start-line="40166" selection-start-column="4" selection-end-line="40166" selection-end-column="4" />
+                <state vertical-scroll-proportion="6.1">
+                  <caret line="40170" column="18" selection-start-line="40170" selection-start-column="18" selection-end-line="40170" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
@@ -130,15 +129,15 @@
         <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/js/main.js.css" />
         <option value="$PROJECT_DIR$/Notes/testcode/css/main.css" />
-        <option value="$PROJECT_DIR$/Notes/Project Summary.txt" />
         <option value="$PROJECT_DIR$/js/discrete_d3.js" />
         <option value="$PROJECT_DIR$/Notes/testcode/index.html" />
         <option value="$PROJECT_DIR$/Notes/d3.txt" />
         <option value="$PROJECT_DIR$/Notes/testcode/js/main.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/discrete_d3_view.js" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/js/discrete_d3_BarGraph.js" />
+        <option value="$PROJECT_DIR$/js/discrete_d3_view.js" />
+        <option value="$PROJECT_DIR$/Notes/Project Summary.txt" />
       </list>
     </option>
   </component>
@@ -435,7 +434,13 @@
       <option name="project" value="LOCAL" />
       <updated>1437458206938</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="View 1 is functional">
+      <created>1437459573295</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1437459573295</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -515,7 +520,8 @@
     <MESSAGE value="Graph scales properly" />
     <MESSAGE value="Graph scales properly lol jk" />
     <MESSAGE value="small error in data" />
-    <option name="LAST_COMMIT_MESSAGE" value="small error in data" />
+    <MESSAGE value="View 1 is functional" />
+    <option name="LAST_COMMIT_MESSAGE" value="View 1 is functional" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -869,6 +875,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="6.1">
+          <caret line="40170" column="18" selection-start-line="40170" selection-start-column="18" selection-end-line="40170" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="136" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/discrete_d3_BarGraph.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/discrete_d3_view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Notes/Email text.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -877,42 +915,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/data.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40166" column="4" selection-start-line="40166" selection-start-column="4" selection-end-line="40166" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Notes/Project Summary.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="9" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/discrete_d3_view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.8965516">
-          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="76" column="57" selection-start-line="76" selection-start-column="57" selection-end-line="76" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/discrete_d3_BarGraph.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30612245">
-          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.49225664">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
           <folding />
         </state>
       </provider>
