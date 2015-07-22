@@ -24,7 +24,7 @@ View.prototype.build = function() {
 
         //method to contain all graphing
         var bindData = merge_options(initialData, categoryResults);*/
-    data = [
+    var passedData = [
         {
             'category': 'baked',
             'fakeFood': 32225,
@@ -90,15 +90,15 @@ View.prototype.build = function() {
     ];
     //View 1 BarGraph
     self.charts.push(new BarGraph({
-        data:data
+        data:passedData
     }));
     //This needs to be changed so that it implements
-    self.charts.push(new BarGraph({
+    /*self.charts.push(new BarGraph({
         data:data[0].categories,
         yVar: 'cost',
         hoverTitle: 'cost($): ',
         id: 'svg2'
-    }));
+    }));*/
 
     d3.select('#svg1').selectAll('rect').on('click', function(d) {
        self.charts.push(new BarGraph({
@@ -122,4 +122,3 @@ View.prototype.buildControls = function() {
     //no controls yet
 };
 
-debugVars.barsGraph = new BarGraph({data:data});

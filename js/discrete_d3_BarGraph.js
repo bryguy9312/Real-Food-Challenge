@@ -1,4 +1,3 @@
-"use strict";
 
 
 var data;
@@ -21,12 +20,16 @@ var BarGraph = function(settings){
     self.settings = $.extend(false, self.defaults, settings);
     self.settings.height = self.settings.totalHeight - self.settings.margin.bottom - self.settings.margin.top;
     self.settings.width  = self.settings.totalWidth - self.settings.margin.left - self.settings.margin.right;
+
+    console.log("BarGraph Constructor: " + self.settings.data);
+    console.log(data);
+
     self.rectFunc = function(rect) {
         debugMsg('=======rectFunc executing=======');
         debugMsg('self.width: ' + self.settings.width);
         debugMsg('self.index: ' + self.settings.index);
         debugMsg('self.margin.right: ' + self.settings.margin.right);
-        console.log(self.settings.data);
+        console.log("RECT FUNCTION : " + self.settings.data);
         console.log(rect);
 
         rect.attr('width', self.xScale(20))
@@ -54,12 +57,13 @@ BarGraph.prototype.setScales = function() {
     debugMsg('setting scales');
     var self = this;
     var yMin = 0;
+    console.log(self.settings.data);
     var yMax = d3.max(self.settings.data, function(d) { return (d[self.settings.yVar])});
 
     self.xScale = d3.scale.linear().range([0, self.settings.width]).domain([0, self.settings.width]);
     self.yScale = d3.scale.linear().range([self.settings.height, 0]).domain([yMin, yMax]);
     debugVars.yScale = self.yScale;
-    self.xAxis = d3.svg.axis().scale(self.xScale).orient('bottom').ticks(0);
+    self.xAxis = d3.svg.axis().scale(self.xScale).orient('bottom');
     self.yAxis = d3.svg.axis().scale(self.yScale).orient('left');
     debugMsg('scales set');
 };
