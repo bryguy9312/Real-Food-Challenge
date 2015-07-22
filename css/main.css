@@ -1,0 +1,50 @@
+@import url('http://fonts.googleapis.com/css?family=PT+Serif');
+
+body {
+	font-family: 'T Serif', 'Helvetica Neue','Helvetica',sans-serif;
+	font-weight: 300;
+	background-size: contain;
+	background-attachment: fixed;
+	opacity: 0.9;
+
+}
+
+#title-box {
+	
+	font-family: "chaparral pro";
+}
+
+@media screen and (min-width: 992px) {
+    
+    body {
+	background-image: url("../img/background.jpg");
+    }
+  }
+
+path { 
+    stroke: grey;
+    stroke-width: 2;
+    fill: none;
+}
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+h1 {
+	font-family: 'PT Serif', 'Helvetica Neue','Helvetica',sans-serif;
+	color: grey;
+}
+
+.tick {
+	font-family: 'PT Serif', 'Helvetica Neue','Helvetica',sans-serif;
+	font-size: 1em;
+}
+
+.axis {
+	stroke: grey;
+	color: D74523;
+}
