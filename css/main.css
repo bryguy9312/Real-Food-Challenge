@@ -2,16 +2,29 @@
 
 body {
 	font-family: 'T Serif', 'Helvetica Neue','Helvetica',sans-serif;
-	background-image: url("data/ReDesignPhoto_1.png");
 	font-weight: 300;
 	opacity: 0.9;
 	font-size: 16px;
 
+
 }
+#svg1 {
+	margin-left: 50px;
+	margin-top: 50px;
+	width: 400px;
+  	height: 400px;
+}
+
+#svg2 {
+	width: 400px;
+  	height: 400px;
+}
+
+
 #top-content {
 	position: relative;
 	height: 550px;
-	background-color: #f2eaf0;
+	background-color: #DCDCDC;
 }
 
 #title-box {
@@ -34,31 +47,30 @@ span {
 }
 #art-box{
 	display: block;
-	width: 893px;
+	width: 810px;
 	height: 45px;
 	padding-top: 5px;
     background: lightgrey;
     margin-left: 285px;
     margin-top: -45px;
-    margin-right: 50px;
+    margin-right: 0px;
 
 }
 #top-content{
 	height: 35px;
-  background-color: '#f2dcc9';
-    margin-left: 50px;
-    margin-right: 50px;
+	background-color: '#f2dcc9';
+    margin-left: 100px;
+    margin-right: 83px;
 
 }
 
 @media screen and (min-width: 992px) {
-    
     body {
-	background-image: url("/data/ReDesignPhoto_1.png");
+	background-image: url("data/ReDesignPhoto_1.png");
     }
   }
 
-path { 
+.path { 
     stroke: grey;
     stroke-width: 2;
     fill: none;
@@ -69,6 +81,8 @@ path {
     stroke: grey;
     stroke-width: 1;
     shape-rendering: crispEdges;
+    width: 600px;
+  	height: 600px;
 }
 
 .tick {
