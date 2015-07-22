@@ -83,6 +83,8 @@ span {
 	margin-right: 50%;
 }
 
+
+
 li {
 
 	font-size: 12px;
@@ -93,14 +95,19 @@ li {
     stroke-width: 2;
     fill: none;
 }
+
 .axis path,
 .axis line {
     fill: none;
     stroke: grey;
     stroke-width: 1;
     shape-rendering: crispEdges;
-    width: 600px;
-  	height: 600px;
+}
+
+.y{
+	font-family: 'PT Serif', 'Helvetica Neue','Helvetica',sans-serif;
+	font-size: 1em;
+	color: D74523;
 }
 
 .tick {
