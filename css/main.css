@@ -2,17 +2,16 @@
 
 body {
 	font-family: 'T Serif', 'Helvetica Neue','Helvetica',sans-serif;
+	background-image: url("data/ReDesignPhoto_1.png");
 	font-weight: 300;
-	background-size: contain;
-	background-attachment: fixed;
 	opacity: 0.9;
 	font-size: 16px;
 
 }
 #top-content {
 	position: relative;
-  height: 50px;
-  background-color: rgba(255, 255, 255, 0.7);
+	height: 550px;
+	background-color: #f2eaf0;
 }
 
 #title-box {
@@ -22,23 +21,40 @@ body {
 }
 span {
 	display: block;
-  width: 285px;
-  height: 45px;
-  padding-top: 5px;
-  background: #d74523;
-  text-transform: uppercase;
-  color: white;
-  text-decoration: none;
-  font-size: 25px;
-  text-align: center;
-  letter-spacing: 3px;
-  margin-left: 50px;
+	width: 285px;
+  	height: 40px;
+  	padding-top: 3px;
+  	background: #d74523;
+	text-transform: uppercase;
+	color: white;
+	text-decoration: none;
+	font-size: 25px;
+	text-align: center;
+	letter-spacing: 3px;
+}
+#art-box{
+	display: block;
+	width: 893px;
+	height: 45px;
+	padding-top: 5px;
+    background: lightgrey;
+    margin-left: 285px;
+    margin-top: -45px;
+    margin-right: 50px;
+
+}
+#top-content{
+	height: 35px;
+  background-color: '#f2dcc9';
+    margin-left: 50px;
+    margin-right: 50px;
+
 }
 
 @media screen and (min-width: 992px) {
     
     body {
-	background-image: url("../img/background.jpg");
+	background-image: url("/data/ReDesignPhoto_1.png");
     }
   }
 
@@ -53,12 +69,6 @@ path {
     stroke: grey;
     stroke-width: 1;
     shape-rendering: crispEdges;
-}
-
-h1 {
-	font-family: 'PT Serif', 'Helvetica Neue','Helvetica',sans-serif;
-	color: grey;
-	margin-top: -2px;
 }
 
 .tick {
