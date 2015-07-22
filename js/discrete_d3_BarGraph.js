@@ -7,19 +7,20 @@ var BarGraph = function(settings){
     self.defaults = {
         margin: {
             left:50,
-            bottom: 100,
+            bottom: 50,
             top: 50,
             right: 50
         },
         xVar: 'category',
         yVar: 'rfp',
         hoverTitle: 'rfp(%):',
-        id: "svg1"
+        id: "svg1",
+        totalHeight: 600,
+        totalWidth: 600
     };
     self.settings = $.extend(false, self.defaults, settings);
-    self.settings.height = 400 - self.settings.margin.bottom - self.settings.margin.top;
-    self.settings.width  = 400 - self.settings.margin.left - self.settings.margin.right;
-    console.log("VIEW VARIABLES: " + self.settings.yVar + ", " + self.settings.hoverTitle);
+    self.settings.height = self.settings.totalHeight - self.settings.margin.bottom - self.settings.margin.top;
+    self.settings.width  = self.settings.totalWidth - self.settings.margin.left - self.settings.margin.right;
     self.rectFunc = function(rect) {
         debugMsg('=======rectFunc executing=======');
         debugMsg('self.width: ' + self.settings.width);
@@ -53,13 +54,12 @@ BarGraph.prototype.setScales = function() {
     debugMsg('setting scales');
     var self = this;
     var yMin = 0;
-    //console.log(data);
     var yMax = d3.max(self.settings.data, function(d) { return (d[self.settings.yVar])});
 
     self.xScale = d3.scale.linear().range([0, self.settings.width]).domain([0, self.settings.width]);
     self.yScale = d3.scale.linear().range([self.settings.height, 0]).domain([yMin, yMax]);
     debugVars.yScale = self.yScale;
-    self.xAxis = d3.svg.axis().scale(self.xScale).orient('bottom');
+    self.xAxis = d3.svg.axis().scale(self.xScale).orient('bottom').ticks(0);
     self.yAxis = d3.svg.axis().scale(self.yScale).orient('left');
     debugMsg('scales set');
 };
@@ -68,14 +68,13 @@ BarGraph.prototype.build = function() {
     debugMsg('building');
     var self = this;
     //creates a 400x400 svg in the body, this will need to be modified to fit in the final html
-    self.svg = d3.select('body').append('svg').attr('height', 400).attr('width', 400).attr('id', this.settings.id);
+    self.svg = d3.select('body').append('svg').attr('height', self.settings.totalHeight).attr('width', self.settings.totalWidth).attr('id', this.settings.id);
 
     //G for bars
     self.g = self.svg.append('g')
         .attr('transform', 'translate(' + self.settings.margin.left + ',' + self.settings.margin.top + ')')
         .attr('height', self.settings.height)
         .attr('width', self.settings.width);
-    debugVars.g = self.g;
 
     //G for x axis
     self.xAxisG = self.svg.append('g')
@@ -100,10 +99,8 @@ BarGraph.prototype.draw = function() {
     debugMsg('binding data to rectangles');
     var bars = self.g.selectAll('rect').data(self.settings.data);
     debugMsg("data is bound to rectangles, logging bound data");
-    console.log(self.settings.data);
     //enter new elements
     bars.enter().append('rect').call(self.rectFunc);
-    console.log(bars);
     // exit elements that may have left
     bars.exit().remove();
     //transition all rects to new self.settings.data??
@@ -113,13 +110,36 @@ BarGraph.prototype.draw = function() {
     self.yAxisG.call(self.yAxis);
     debugMsg('drawing done');
     debugVars.self = self;
+
+    self.svg.selectAll('.bartext').data(self.settings.data).enter().append('text')
+        .attr('class', 'bartext')
+        .attr('text-anchor', 'middle')
+        .attr('x', function(d, i) { return self.xScale(i*50)})
+        .attr('y', self.settings.totalHeight - 10)
+        .text(function(d) {return d.category});
+
+
+    self.svg.append("text")
+        .attr("class", "x label")
+        .attr("text-anchor", "middle")
+        .attr("x", self.settings.width / 2)
+        .attr("y", self.settings.totalHeight-15)
+        .text(self.settings.xVar);
+    self.svg.append("text")
+        .attr("class", "y label")
+        .attr("text-anchor", "middle")
+        .attr("y", 5)
+        .attr("x", - self.settings.totalHeight/2)
+        .attr("dy", ".75em")
+        .attr("transform", "rotate(-90)")
+        .text(self.settings.yVar);
 };
 
 BarGraph.prototype.addHover = function() {
     $('rect').tooltip({
         'container': 'body',
         'placement': 'bottom'
-    })
+    });
 };
 
 
