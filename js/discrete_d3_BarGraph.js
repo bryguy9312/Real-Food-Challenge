@@ -36,7 +36,9 @@ var BarGraph = function(settings){
             .attr('height', function(d) {
                 return self.settings.height - self.yScale(d[self.settings.yVar])
             })
-            .attr('fill', '#D74523')
+            .attr('fill', function(d, i) {
+                return '#D74523';
+            })
             .attr('x', function(d, index) {
                 return  (self.xScale((index * 30)));
             })

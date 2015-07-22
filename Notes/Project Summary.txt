@@ -95,8 +95,6 @@ TODO: (BRYAN)
     Need to fix x axis still (will probably remove the ticks and just use labels or whatever it's called in d3)
         ticks removed, need to add ticks for each bar or just add rotated labels
     Need to adjust width of individual rectangles, width should be proportional to chart size and how many rects there are
-    Need to clear the #svg2 html whenever a bar in #svg1 is clicked (also, need to initialize with total data instead of baked goods)
-        this code will probably need further adjustment based on what eric is going to do
     Code needs to be cleaned up in general... it is very messy and I don't like it (Mine, Stephen's is awesome)
 
 TODO: (Steven)

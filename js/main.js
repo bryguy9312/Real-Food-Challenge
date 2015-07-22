@@ -10,11 +10,13 @@ var debugMsg = function(msg) {
 //Asynchronous function, all manipulation should occur in here.
 // !!! IMPORTANT !!! formattedData is the data formatted exactly to specification.
 debugMsg('Data Loading!');
+var passedData = [];
+
 d3.text("data/data.csv", function(data) {
     var rawData = d3.csv.parseRows(data);
-    debugVars.data = setupData(rawData);
+    passedData = setupData(rawData);
+    var view = new View();
 });
-
 
 /*
  ********************************
