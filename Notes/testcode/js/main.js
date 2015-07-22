@@ -8,24 +8,71 @@ var debugMsg = function(msg) {
 };
 
 //Asynchronous function, all manipulation should occur in here.
+// !!! IMPORTANT !!! formattedData is the data formatted exactly to specification.
 debugMsg('Data Loading!');
-d3.json("data/data.json", function(error, data){
-    debugVars.data = data;
-    debugMsg('Data Loaded!');
-    var categorized = dataCategorize(data);
-    var initialData = initData(categorized);
+d3.text("data/data.csv", function(data) {
+    var testData = d3.csv.parseRows(data);
+    debugVars.data = testData;
+    transformedData = dataTransform(testData);
+    debugVars.transformedData = transformedData;
+    var categorized = dataCategorize(transformedData);
+    var formattedData = initData(categorized);
     var categoryResults = {};
     // Loops through each of the categories and breaks them down into the four components of real food.
-    for(category in categorized) {
-        var realFoodData = realData(categorized[category]);
-        categoryResults[category] = realFoodData;
+
+    for(var i = 0; i < formattedData.length; i++) {
+        if(formattedData[i].category != 'total') {
+            var category = formattedData[i].category;
+            var realFoodData = realData(categorized[category]);
+            formattedData[i]['categories'] = realFoodData;
+        } else {
+            var totalRealFood = realData(transformedData);
+            formattedData[i]['categories'] = totalRealFood;
+        }
     }
-    debugVars.categoryResults = categoryResults;
-
-    //method to contain all graphing
-
-
+    debugVars.formattedData = formattedData;
 });
+
+// Transforms the data from CSV to the JSON-esque format.
+var dataTransform = function(rawData) {
+    debugMsg('Data Transforming!');
+    var key;
+    var transformedData = [];
+    rawData.map(function(rawRow) {
+        // Sets the key
+        if(!key)
+            key = rawRow;
+        else {
+            if(checkValid(rawRow)) {
+                var transformedRow = {};
+                // Iterate through the row data;
+                for(var i = 0; i < rawRow.length; i++) {
+                    var fieldTitle = key[i];
+                    // Checks if the category doesn't exist, then labels it "uncategorized"
+                    if(key[i] == 'Category' && rawRow[i] == '')
+                        rawRow[i] = 'uncategorized';
+                    transformedRow[fieldTitle] = rawRow[i];
+                }
+                transformedData.push(transformedRow);
+            }
+        }
+    });
+    debugMsg('Data Transformed!');
+    debugVars.key = key;
+    return transformedData;
+};
+
+// Removes any entries that do not have a name or cost.
+var checkValid = function(rawRow) {
+    valid = true;
+    // rawRow[0] = item name; rawRow[11] = item cost
+    if (rawRow[0] == '' || rawRow[11] == '') {
+        valid = false;
+    }
+    if (valid == false)
+        debugMsg("Entry has failed the test: " + rawRow);
+    return valid;
+}
 
 /**
  * Organizes the raw data into categories.
@@ -37,8 +84,6 @@ var dataCategorize =  function(data) {
     var categorized = {};
     data.map(function(entry){
         var category = entry.Category;
-        if(category == "")
-            category = "uncategorized";
         if(!categorized.hasOwnProperty(category))
             categorized[category] = [];
         categorized[category].push(entry);
@@ -53,30 +98,44 @@ var dataCategorize =  function(data) {
  * @param {Object[]} data - The categorized data.
  * @return {Object[]} initialData - Calculated Real Food Value totals.
  */
-var initData = function(data) {
+var initData = function(categorizedData) {
     debugMsg('Creating initial data!');
-    var initialData = {};
+    var initialData = [];
     // Iterates through each category
-    for (var category in data) {
+    var totalRealFood = 0;
+    var totalFakeFood = 0;
+    for (var category in categorizedData) {
         // Checks that the key exists in the data set
-        if (data.hasOwnProperty(category)) {
+        if (categorizedData.hasOwnProperty(category)) {
             var realFood = 0;
             var fakeFood = 0;
             // Iterates through each food item
-            data[category].map(function(food) {
-                    if(checkRealFood(food))
-                        realFood += parseFloat(food.Cost);
-                    else
-                        fakeFood += parseFloat(food.Cost);
+            categorizedData[category].map(function(food) {
+                if(checkRealFood(food)) {
+                    realFood += parseFloat(food.Cost);
+                    totalRealFood += parseFloat(food.Cost);
+                } else {
+                    fakeFood += parseFloat(food.Cost);
+                    totalFakeFood += parseFloat(food.Cost);
+                }
             });
-            initialData[category] = {
+            initialData.push({
+                'category' : category,
                 'realFood' : realFood,
                 'fakeFood' : fakeFood,
-                'totalFood' : realFood + fakeFood
-            }
+                'totalFood' : realFood + fakeFood,
+                'rfp' : (realFood / (realFood + fakeFood)) * 100
+            })
         } else
             debugMsg("Execution error! Unidentified key passed!")
     }
+    initialData.push({
+        'category': 'total',
+        'realFood': totalRealFood,
+        'fakeFood': totalFakeFood,
+        'totalFood': totalRealFood + totalFakeFood,
+        'rfp': (totalRealFood / (totalRealFood + totalFakeFood)) * 100
+    });
     debugMsg('Initial data created!');
     debugVars.initialData = initialData;
     return initialData;
@@ -97,17 +156,39 @@ var realData = function(category) {
         'humane': 0,
         'total' : 0
     };
+    var realFood = [
+        {
+            'category': 'ecological',
+            'cost' : 0
+        },
+        {
+            'category': 'fair',
+            'cost' : 0
+        },
+        {
+            'category': 'humane',
+            'cost' : 0
+        },
+        {
+            'category': 'local',
+            'cost' : 0
+        },
+        {
+            'category': 'total',
+            'cost' : 0
+        }
+    ]
     category.map(function(food) {
        if(checkRealFood(food)) {
-           if(food.Local == 'yes')
-               realFood.local += parseFloat(food.Cost);
-           if(food.Fair == 'yes')
-               realFood.fair += parseFloat(food.Cost);
            if(food.Ecological == 'yes')
-               realFood.ecological += parseFloat(food.Cost);
+               realFood[0].cost += parseFloat(food.Cost);
+           if(food.Fair == 'yes')
+               realFood[1].cost += parseFloat(food.Cost);
            if(food.Humane == 'yes')
-               realFood.humane += parseFloat(food.Cost);
-           realFood.total += parseFloat(food.Cost);
+               realFood[2].cost += parseFloat(food.Cost);
+           if(food.Local == 'yes')
+               realFood[3].cost += parseFloat(food.Cost);
+           realFood[4].cost += parseFloat(food.Cost);
        }
     });
     debugVars.realFood = realFood;
@@ -125,58 +206,3 @@ var checkRealFood = function(entry) {
         return false;
     return (entry.Local == 'yes' || entry.Fair == 'yes' || entry.Ecological == 'yes' || entry.Humane == 'yes');
 };
-
-/*
-Category 1: Initial Data #rfpover!rfp
-{
-    category: {
-        'realFood': #,
-        'fakeFood': #,
-        'totalCost': #,
-    }
-}
-
-Category 2: Upon being clicked, this data is required #barexplosion
-{
-     category: {
-         'realFood': #,
-         'ecological': $,
-         'humane': $,
-         'fair': $,
-         'local': $,
-     }
-}
-
-Category 3: Fake foods?
- */
-
-/*
-    Total Costs
-        Cost of Real Food
-        Costs of Fake Food
-        Total Costs
-
-
- */
-
-/* Simplifies the data to
-var dataSimplify = function(data) {
-    debugMsg('Data simplifying!');
-    var simplifiedData = [];
-    // [ { "label" : #, "value" : $} ]
-    for (var key in data) {
-        if (data.hasOwnProperty(key)) {
-            var label = key;
-            var value = data[key].length;
-            simplifiedData.push({
-                'label' : label,
-                'value' : value
-            });
-        } else
-            debugMsg("Execution error! Unidentified key passed!")
-    }
-    debugVars.simplifiedData = simplifiedData;
-    debugMsg('Data Simplified!');
-    return simplifiedData;
-}
-    */

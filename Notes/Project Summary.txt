@@ -75,14 +75,15 @@ each object will look like this:
 
 {
     'category': 'baked',
-    'fakeFood': 32225,
-    'realFood': 391,
-    'totalFood': 32616,
     'ecological': 391.68,
     'fair': 0,
+    'fakeFood': 32225,
     'humane': 0,
     'local': 0,
+    'realFood': 391,
+    'rfp' : 78.84238293,
     'total': 391.68,
+    'totalFood': 32616
     'items': {{array of items}} // not really sure about this one, it really depends on how we want to display the items, but we'll probably also need to include the items from alternatives as well
 }
 
