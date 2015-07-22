@@ -5,6 +5,7 @@ body {
 	font-weight: 300;
 	opacity: 0.9;
 	font-size: 16px;
+		background-image: url("data/ricepaper_v3.png");
 
 
 }
@@ -19,7 +20,6 @@ body {
 	width: 400px;
   	height: 400px;
 }
-
 
 #top-content {
 	position: relative;
@@ -44,6 +44,7 @@ span {
 	font-size: 25px;
 	text-align: center;
 	letter-spacing: 3px;
+
 }
 #art-box{
 	display: block;
@@ -61,12 +62,27 @@ span {
 	background-color: '#f2dcc9';
     margin-left: 100px;
     margin-right: 83px;
+    background-image: url("ricepaper_v3.png");
+}
 
+#write-up {
+	margin-top: 70px;
+	margin-bottom: 100px;
+	margin-left: 100px;
+	margin-right: 50%;
+}
+li {
+	font-size: 12px;
+}
+
+#right-list {
+	margin-right: 10px;
+	margin-left: 50%;
 }
 
 @media screen and (min-width: 992px) {
     body {
-	background-image: url("data/ReDesignPhoto_1.png");
+	background-image: url("/data/ricepaper_v3.png");
     }
   }
 
