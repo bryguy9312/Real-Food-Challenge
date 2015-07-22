@@ -98,10 +98,10 @@ li {
     shape-rendering: crispEdges;
 }
 
-.y{
+.label{
 	font-family: 'PT Serif', 'Helvetica Neue','Helvetica',sans-serif;
 	font-size: 1em;
-	color: D74523;
+	background-color: #D74523;
 }
 
 .tick {
