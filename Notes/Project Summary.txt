@@ -97,6 +97,7 @@ TODO: (BRYAN)
     Need to adjust width of individual rectangles, width should be proportional to chart size and how many rects there are
     Code needs to be cleaned up in general... it is very messy and I don't like it (Mine, Stephen's is awesome)
 
+
 TODO: (Steven)
     Please format the data as specified above, that's really all we need to get this working for the entire data set
     Probably remove the json stuff from main.js, I don't think it's actually being used now that we are calling for data in View instead

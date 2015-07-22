@@ -1,3 +1,5 @@
+
+
 //Debug Functions
 var debugMode = true;
 var debugVars = {};
@@ -80,7 +82,7 @@ var dataTransform = function(rawData) {
 var checkValid = function(rawRow) {
     valid = true;
     // rawRow[0] = item name; rawRow[11] = item cost
-    if (rawRow[0] == '' || rawRow[11] == '') {
+    if (rawRow[0] == '' || rawRow[1] == '' || rawRow[11] == '') {
         valid = false;
     }
     if (valid == false)
@@ -220,3 +222,4 @@ var checkRealFood = function(entry) {
         return false;
     return (entry.Local == 'yes' || entry.Fair == 'yes' || entry.Ecological == 'yes' || entry.Humane == 'yes');
 };
+

@@ -1,21 +1,20 @@
 
-
 var data;
 var BarGraph = function(settings){
     var self = this;
     self.defaults = {
         margin: {
-            left:50,
+            left:100,
             bottom: 50,
             top: 50,
             right: 50
         },
         xVar: 'category',
         yVar: 'rfp',
-        hoverTitle: 'rfp(%):',
+        hoverTitle: 'Category: ',
         id: "svg1",
-        totalHeight: 600,
-        totalWidth: 600
+        totalHeight: 800,
+        totalWidth: 800
     };
     self.settings = $.extend(false, self.defaults, settings);
     self.settings.height = self.settings.totalHeight - self.settings.margin.bottom - self.settings.margin.top;
@@ -32,7 +31,7 @@ var BarGraph = function(settings){
         console.log("RECT FUNCTION : " + self.settings.data);
         console.log(rect);
 
-        rect.attr('width', self.xScale(20))
+        rect.attr('width', self.xScale(self.settings.width/self.settings.data.length) -10)
             .attr('height', function(d) {
                 return self.settings.height - self.yScale(d[self.settings.yVar])
             })
@@ -40,14 +39,14 @@ var BarGraph = function(settings){
                 return '#D74523';
             })
             .attr('x', function(d, index) {
-                return  (self.xScale((index * 30)));
+                return  (self.xScale(index * (self.settings.width / self.settings.data.length)));
             })
             .attr('y', function(d) {
                 return (self.yScale(d[self.settings.yVar]));
             })
             .attr('title', function(d) {
                 debugMsg('rectFunc title');
-                 return self.settings.hoverTitle + d[self.settings.yVar];
+                 return self.settings.hoverTitle + d.category;
             });
         debugMsg('=======rectFunc ending=======')
     };
@@ -65,7 +64,7 @@ BarGraph.prototype.setScales = function() {
     self.xScale = d3.scale.linear().range([0, self.settings.width]).domain([0, self.settings.width]);
     self.yScale = d3.scale.linear().range([self.settings.height, 0]).domain([yMin, yMax]);
     debugVars.yScale = self.yScale;
-    self.xAxis = d3.svg.axis().scale(self.xScale).orient('bottom');
+    self.xAxis = d3.svg.axis().scale(self.xScale).orient('bottom').ticks("none");
     self.yAxis = d3.svg.axis().scale(self.yScale).orient('left');
     debugMsg('scales set');
 };
@@ -117,27 +116,26 @@ BarGraph.prototype.draw = function() {
     debugMsg('drawing done');
     debugVars.self = self;
 
-    self.svg.selectAll('.bartext').data(self.settings.data).enter().append('text')
+    /*self.svg.selectAll('.bartext').data(self.settings.data).enter().append('text')
         .attr('class', 'bartext')
         .attr('text-anchor', 'middle')
-        .attr('x', function(d, i) { return self.xScale(i*50)})
+        .attr('x', function(d, i) { return (self.xScale(i * (self.settings.width / self.settings.data.length)))})
         .attr('y', self.settings.totalHeight - 10)
-        .text(function(d) {return d.category});
+        .text(function(d) {return d.category}).attr('transform', 'rotate(0)');*/
 
 
     self.svg.append("text")
         .attr("class", "x label")
         .attr("text-anchor", "middle")
-        .attr("x", self.settings.width / 2)
+        .attr("x", self.settings.totalWidth / 2)
         .attr("y", self.settings.totalHeight-15)
         .text(self.settings.xVar);
     self.svg.append("text")
         .attr("class", "y label")
         .attr("text-anchor", "middle")
         .attr("y", 5)
-        .attr("x", - self.settings.totalHeight/2)
+        .attr("x", 25)
         .attr("dy", ".75em")
-        .attr("transform", "rotate(-90)")
         .text(self.settings.yVar);
 };
 
