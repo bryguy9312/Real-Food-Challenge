@@ -11,9 +11,19 @@ var debugMsg = function(msg) {
 // !!! IMPORTANT !!! formattedData is the data formatted exactly to specification.
 debugMsg('Data Loading!');
 d3.text("data/data.csv", function(data) {
-    var testData = d3.csv.parseRows(data);
-    debugVars.data = testData;
-    transformedData = dataTransform(testData);
+    var rawData = d3.csv.parseRows(data);
+    debugVars.data = setupData(rawData);
+});
+
+
+/*
+ ********************************
+ * DATA MANIPULATION FUNCTIONS  *
+ ********************************
+ */
+
+var setupData = function(rawData) {
+    transformedData = dataTransform(rawData);
     debugVars.transformedData = transformedData;
     var categorized = dataCategorize(transformedData);
     var formattedData = initData(categorized);
@@ -31,8 +41,8 @@ d3.text("data/data.csv", function(data) {
         }
     }
     debugVars.formattedData = formattedData;
-});
-
+    return formattedData;
+}
 // Transforms the data from CSV to the JSON-esque format.
 var dataTransform = function(rawData) {
     debugMsg('Data Transforming!');
@@ -62,7 +72,9 @@ var dataTransform = function(rawData) {
     return transformedData;
 };
 
-// Removes any entries that do not have a name or cost.
+/**
+ * Removes any entries that do not have a name or cost.
+ */
 var checkValid = function(rawRow) {
     valid = true;
     // rawRow[0] = item name; rawRow[11] = item cost

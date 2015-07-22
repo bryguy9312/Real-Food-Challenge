@@ -21,6 +21,7 @@ View.prototype.build = function() {
         debugVars.categoryResults = categoryResults;
 
         data = initialData;
+        debugVars.data = initialData;
 
         //method to contain all graphing
         var bindData = merge_options(initialData, categoryResults);*/

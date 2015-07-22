@@ -69,6 +69,7 @@ var initData = function(data) {
                 else
                     fakeFood += parseFloat(food.Cost);
             });
+            var rfp = realFood / (realFood + fakeFood);
             initialData.push({
                 'category' : category,
                 'realFood' : realFood,
