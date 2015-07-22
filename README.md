@@ -16,7 +16,10 @@ We define real food as food that fulfills at least one of four categories:
 [Group Project Specifications](http://faculty.washington.edu/mikefree/info343/#/challenges/project)
 
 [Real Food Challenge](http://www.realfoodchallenge.org/)
+
 [Real Food Challenge at the UW](http://www.huskyrealfoodchallenge.org/)
 
+
 [Final Project](http://students.washington.edu/srimbak/info343/Real-Food-Challenge/)
+
 [GitHub](https://github.com/bryguy9312/Real-Food-Challenge)
