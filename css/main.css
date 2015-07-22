@@ -6,12 +6,33 @@ body {
 	background-size: contain;
 	background-attachment: fixed;
 	opacity: 0.9;
+	font-size: 16px;
 
+}
+#top-content {
+	position: relative;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 #title-box {
-	
 	font-family: "chaparral pro";
+	display: inline-block;
+  	vertical-align: top;
+}
+span {
+	display: block;
+  width: 285px;
+  height: 45px;
+  padding-top: 5px;
+  background: #d74523;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-left: 50px;
 }
 
 @media screen and (min-width: 992px) {
@@ -37,6 +58,7 @@ path {
 h1 {
 	font-family: 'PT Serif', 'Helvetica Neue','Helvetica',sans-serif;
 	color: grey;
+	margin-top: -2px;
 }
 
 .tick {
