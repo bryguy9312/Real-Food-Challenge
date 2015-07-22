@@ -3,12 +3,20 @@
 body {
 	font-family: 'T Serif', 'Helvetica Neue','Helvetica',sans-serif;
 	font-weight: 300;
-	opacity: 0.9;
 	font-size: 16px;
-		background-image: url("data/ricepaper_v3.png");
-
+	background-size: contain;
+	background-attachment: fixed;
 
 }
+
+@media screen and (min-width: 992px) {
+    body {
+    	background-color: #FAFAFA;
+    	background-repeat: no-repeat;
+    }
+
+  }
+
 #svg1 {
 	margin-left: 50px;
 	margin-top: 50px;
@@ -32,6 +40,7 @@ body {
 	display: inline-block;
   	vertical-align: top;
 }
+
 span {
 	display: block;
 	width: 285px;
@@ -44,8 +53,8 @@ span {
 	font-size: 25px;
 	text-align: center;
 	letter-spacing: 3px;
-
 }
+
 #art-box{
 	display: block;
 	width: 810px;
@@ -57,12 +66,14 @@ span {
     margin-right: 0px;
 
 }
+
 #top-content{
 	height: 35px;
 	background-color: '#f2dcc9';
     margin-left: 100px;
     margin-right: 83px;
-    background-image: url("ricepaper_v3.png");
+    background-size: 100% 100%;
+    background-image: url("../data/ricepaper_v3.png");
 }
 
 #write-up {
@@ -71,20 +82,11 @@ span {
 	margin-left: 100px;
 	margin-right: 50%;
 }
+
 li {
+
 	font-size: 12px;
 }
-
-#right-list {
-	margin-right: 10px;
-	margin-left: 50%;
-}
-
-@media screen and (min-width: 992px) {
-    body {
-	background-image: url("/data/ricepaper_v3.png");
-    }
-  }
 
 .path { 
     stroke: grey;
