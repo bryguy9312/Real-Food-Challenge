@@ -32,9 +32,10 @@
             <entry file="file://$PROJECT_DIR$/Notes/testcode/index.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.5450122">
-                  <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+                  <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
                   <folding>
                     <element signature="n#style#0;n#svg#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#svg#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                   </folding>
                 </state>
@@ -50,8 +51,8 @@
               <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/Notes/testcode/js/main.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.6210046">
-                      <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
+                    <state vertical-scroll-proportion="0.65068495">
+                      <caret line="259" column="27" selection-start-line="259" selection-start-column="17" selection-end-line="259" selection-end-column="27" />
                       <folding />
                     </state>
                   </provider>
@@ -64,8 +65,8 @@
               <file leaf-file-name="chart.js" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/Notes/testcode/js/chart.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.69863015">
-                      <caret line="27" column="61" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
+                    <state vertical-scroll-proportion="0.5045662">
+                      <caret line="31" column="57" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
                       <folding />
                     </state>
                   </provider>
@@ -110,8 +111,8 @@
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/Notes/testcode/index.html" />
         <option value="$PROJECT_DIR$/Notes/testcode/js/main.js" />
+        <option value="$PROJECT_DIR$/Notes/testcode/index.html" />
         <option value="$PROJECT_DIR$/Notes/testcode/js/chart.js" />
       </list>
     </option>
@@ -500,7 +501,13 @@
       <option name="project" value="LOCAL" />
       <updated>1437633173895</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="And more NVD3 work">
+      <created>1437636083340</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1437636083340</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -561,7 +568,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created notes folder." />
     <MESSAGE value="Added some notes of my own" />
     <MESSAGE value="Added more notes" />
     <MESSAGE value="Added a section for test code" />
@@ -586,7 +592,8 @@
     <MESSAGE value="Fixed twitter handle fail" />
     <MESSAGE value="*coughs*" />
     <MESSAGE value="Did more NVD3 work" />
-    <option name="LAST_COMMIT_MESSAGE" value="Did more NVD3 work" />
+    <MESSAGE value="And more NVD3 work" />
+    <option name="LAST_COMMIT_MESSAGE" value="And more NVD3 work" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -955,29 +962,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Notes/testcode/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65068495">
+          <caret line="259" column="27" selection-start-line="259" selection-start-column="17" selection-end-line="259" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Notes/testcode/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5450122">
-          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+          <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
           <folding>
             <element signature="n#style#0;n#svg#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#svg#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Notes/testcode/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6210046">
-          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Notes/testcode/js/chart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69863015">
-          <caret line="27" column="61" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
+        <state vertical-scroll-proportion="0.5045662">
+          <caret line="31" column="57" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
           <folding />
         </state>
       </provider>

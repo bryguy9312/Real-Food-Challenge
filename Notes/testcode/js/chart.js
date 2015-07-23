@@ -6,7 +6,12 @@ nv.addGraph(function() {
         var secondaryData;
 
         var chart = nv.models.discreteBarChart()
-                .x(function(d) { return d.category })    //Specify the data accessors.
+                .x(function(d) {
+                    if(d.category == 'teacoffee')
+                        return 'Tea/Coffee'
+                    else
+                        return d.category.capitalize()
+                })    //Specify the data accessors.
                 .y(function(d) { return d.rfp })
                 .staggerLabels(false)    //Too many bars and not enough room? Try staggering labels.
                 .showValues(true)       //...instead, show the bar value right on top of each bar.
@@ -16,7 +21,7 @@ nv.addGraph(function() {
             .call(chart)
 
         var chart2 = nv.models.discreteBarChart()
-            .x(function(d) { return d.category })    //Specify the data accessors.
+            .x(function(d) { return d.category.capitalize() })    //Specify the data accessors.
             .y(function(d) { return d.cost })
             .staggerLabels(false)    //Too many bars and not enough room? Try staggering labels.
             .showValues(true)       //...instead, show the bar value right on top of each bar.
@@ -24,7 +29,7 @@ nv.addGraph(function() {
         nv.utils.windowResize(chart.update);
 
         chart.discretebar.dispatch.on("elementClick", function(e) {
-            console.log(e);
+            $('#chart-detail').css('display', 'initial');
             secondaryData = convertSpecific(e.data.categories);
 
             d3.select('#chart-detail svg')
