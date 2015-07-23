@@ -26,6 +26,21 @@ d3.text("data/data.csv", function(data) {
  * DATA MANIPULATION FUNCTIONS  *
  ********************************
  */
+var convertSpecific = function(categories) {
+    var storedValues = [];
+    categories.map(function(entry) {
+        storedValues.push({
+            'category' : entry.category,
+            'cost' : entry.cost
+        });
+    });
+    var convertedSpecific = [{
+        'key' : 'Specific Chart',
+        'values' : storedValues
+    }];
+    return convertedSpecific;
+}
+
 var convertTo = function(parsedData) {
     var storedValues = [];
     parsedData.map(function(category) {
