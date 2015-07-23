@@ -13,10 +13,12 @@ var debugMsg = function(msg) {
 // !!! IMPORTANT !!! formattedData is the data formatted exactly to specification.
 debugMsg('Data Loading!');
 var passedData = [];
+var nvData;
 
 d3.text("data/data.csv", function(data) {
     var rawData = d3.csv.parseRows(data);
     passedData = setupData(rawData);
+    nvData = convertTo(passedData);
 });
 
 /*
@@ -24,6 +26,24 @@ d3.text("data/data.csv", function(data) {
  * DATA MANIPULATION FUNCTIONS  *
  ********************************
  */
+var convertTo = function(parsedData) {
+    var storedValues = [];
+    parsedData.map(function(category) {
+        categoryElement = category.category;
+        rfp = category.rfp;
+        storedValues.push({
+            'category' : categoryElement,
+            'rfp' : rfp,
+            'categories' : category.categories
+        });
+    })
+    var convertedData = [{
+        'key' : 'RFP Chart',
+        'values' : storedValues
+    }];
+    debugVars.convertedData = convertedData;
+    return convertedData;
+}
 
 var setupData = function(rawData) {
     transformedData = dataTransform(rawData);

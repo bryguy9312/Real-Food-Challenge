@@ -1,21 +1,32 @@
 nv.addGraph(function() {
-    var chart = nv.models.discreteBarChart()
-            .x(function(d) { return d.category })    //Specify the data accessors.
-            .y(function(d) { return d.rfp })
-            .staggerLabels(true)    //Too many bars and not enough room? Try staggering labels.
-            .showValues(true)       //...instead, show the bar value right on top of each bar.
-        ;
+    d3.text("data/data.csv", function(data) {
+        var rawData = d3.csv.parseRows(data);
+        passedData = setupData(rawData);
+        nvData = convertTo(passedData);
 
-    d3.select('#chart svg')
-        .datum(exampleData())
-        .call(chart);
+        var chart = nv.models.discreteBarChart()
+                .x(function(d) { return d.category })    //Specify the data accessors.
+                .y(function(d) { return d.rfp })
+                .staggerLabels(false)    //Too many bars and not enough room? Try staggering labels.
+                .showValues(true)       //...instead, show the bar value right on top of each bar.
 
-    nv.utils.windowResize(chart.update);
+        d3.select('#chart svg')
+            .datum(nvData)
+            .call(chart)
 
-    return chart;
+        nv.utils.windowResize(chart.update);
+
+        chart.discretebar.dispatch.on("elementClick", function(e) {
+            console.log(e);
+        });
+
+        return chart;
+    });
+
 });
 
 //Each bar represents a single discrete quantity.
+/*
 function exampleData() {
     return  [
         {
@@ -57,4 +68,4 @@ function exampleData() {
         }
     ]
 
-}
+}*/
