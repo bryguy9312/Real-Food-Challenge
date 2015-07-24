@@ -15,50 +15,13 @@ debugMsg('Data Loading!');
 var passedData = [];
 var nvData;
 
-d3.text("data/data.csv", function(data) {
-    var rawData = d3.csv.parseRows(data);
-    passedData = setupData(rawData);
-    nvData = convertTo(passedData);
-});
-
 /*
  ********************************
  * DATA MANIPULATION FUNCTIONS  *
  ********************************
  */
-var convertSpecific = function(categories) {
-    var storedValues = [];
-    categories.map(function(entry) {
-        storedValues.push({
-            'category' : entry.category,
-            'cost' : entry.cost
-        });
-    });
-    var convertedSpecific = [{
-        'key' : 'Specific Chart',
-        'values' : storedValues
-    }];
-    return convertedSpecific;
-}
-
-var convertTo = function(parsedData) {
-    var storedValues = [];
-    parsedData.map(function(category) {
-        categoryElement = category.category;
-        rfp = category.rfp;
-        storedValues.push({
-            'category' : categoryElement,
-            'rfp' : rfp,
-            'categories' : category.categories
-        });
-    })
-    var convertedData = [{
-        'key' : 'RFP Chart',
-        'values' : storedValues
-    }];
-    debugVars.convertedData = convertedData;
-    return convertedData;
-}
+var chartTotal = [];
+var totalData = [];
 
 var setupData = function(rawData) {
     transformedData = dataTransform(rawData);
@@ -68,15 +31,21 @@ var setupData = function(rawData) {
     var categoryResults = {};
     // Loops through each of the categories and breaks them down into the four components of real food.
 
-    for(var i = 0; i < formattedData.length; i++) {
-        if(formattedData[i].category != 'total') {
-            var category = formattedData[i].category;
-            var realFoodData = realData(categorized[category]);
-            formattedData[i]['categories'] = realFoodData;
-        } else {
-            var totalRealFood = realData(transformedData);
-            formattedData[i]['categories'] = totalRealFood;
-        }
+
+
+    debugVars.formattedData = formattedData;
+
+    for(var i = 0; i < formattedData[0].values.length; i++) {
+        var category = formattedData[0].values[i].category;
+        var realFoodData = realData(categorized[category]);
+
+        var secondaryData = [{
+            'label' : 'Secondary Chart',
+            'values' : []
+        }]
+
+        secondaryData[0].values = realFoodData;
+        formattedData[0].values[i].categories = secondaryData;
     }
     debugVars.formattedData = formattedData;
     return formattedData;
@@ -150,7 +119,7 @@ var dataCategorize =  function(data) {
  */
 var initData = function(categorizedData) {
     debugMsg('Creating initial data!');
-    var initialData = [];
+    var categorizedRfp = [];
     // Iterates through each category
     var totalRealFood = 0;
     var totalFakeFood = 0;
@@ -169,25 +138,27 @@ var initData = function(categorizedData) {
                     totalFakeFood += parseFloat(food.Cost);
                 }
             });
-            initialData.push({
+            categorizedRfp.push({
                 'category' : category,
-                'realFood' : realFood,
-                'fakeFood' : fakeFood,
-                'totalFood' : realFood + fakeFood,
                 'rfp' : (realFood / (realFood + fakeFood)) * 100
             })
         } else
             debugMsg("Execution error! Unidentified key passed!")
     }
-    initialData.push({
-        'category': 'total',
-        'realFood': totalRealFood,
-        'fakeFood': totalFakeFood,
-        'totalFood': totalRealFood + totalFakeFood,
-        'rfp': (totalRealFood / (totalRealFood + totalFakeFood)) * 100
-    });
+    var initialData = [{
+        'key' : 'Primary Chart',
+        'values' : categorizedRfp
+    }];
+    totalData = [{
+            'category': 'Real Food',
+            'percent' : (totalRealFood / (totalRealFood + totalFakeFood)) * 100
+        }, {
+            'category' : 'Fake Food',
+            'percent' : 100 - (totalRealFood / (totalRealFood + totalFakeFood)) * 100
+        }];
     debugMsg('Initial data created!');
     debugVars.initialData = initialData;
+    debugVars.totalData = totalData;
     return initialData;
 };
 
@@ -198,14 +169,7 @@ var initData = function(categorizedData) {
  * @return {Object[]} categorized - The total amount of real food divided into the categories.
  */
 var realData = function(category) {
-    //debugMsg('Creating real data!');
-    var realFood = {
-        'local' : 0,
-        'fair' : 0,
-        'ecological' : 0,
-        'humane': 0,
-        'total' : 0
-    };
+    debugMsg('Creating real data!');
     var realFood = [
         {
             'category': 'ecological',
