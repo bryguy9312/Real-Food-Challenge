@@ -20,7 +20,6 @@ var nvData;
  * DATA MANIPULATION FUNCTIONS  *
  ********************************
  */
-var chartTotal = [];
 var totalData = [];
 
 var setupData = function(rawData) {
@@ -28,10 +27,6 @@ var setupData = function(rawData) {
     debugVars.transformedData = transformedData;
     var categorized = dataCategorize(transformedData);
     var formattedData = initData(categorized);
-    var categoryResults = {};
-    // Loops through each of the categories and breaks them down into the four components of real food.
-
-
 
     debugVars.formattedData = formattedData;
 
@@ -84,7 +79,6 @@ var dataTransform = function(rawData) {
  */
 var checkValid = function(rawRow) {
     valid = true;
-    // rawRow[0] = item name; rawRow[11] = item cost
     if (rawRow[0] == '' || rawRow[1] == '' || rawRow[11] == '') {
         valid = false;
     }
@@ -224,3 +218,25 @@ var checkRealFood = function(entry) {
 String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }
+
+
+
+
+var selectedFilter;
+
+var chartApp = angular.module('chartApp', []);
+
+
+var processAlternatives = function(rawData) {
+    var processed = [];
+    for(var i = 1; i < rawData.length; i++) {
+        processed.push({
+            'category' : rawData[i][0],
+            'brand' : rawData[i][1],
+            'vendor' : rawData[i][2]
+        })
+    }
+    return processed;
+}
+
+
