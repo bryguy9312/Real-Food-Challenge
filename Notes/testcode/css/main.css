@@ -1,6 +1,119 @@
 /*svg {
     border: solid black;
 }*/
+@import url('http://fonts.googleapis.com/css?family=PT+Serif');
+
+body {
+    font-family: 'T Serif', 'Helvetica Neue','Helvetica',sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    background-size: contain;
+    background-attachment: fixed;
+
+}
+
+@media screen and (min-width: 992px) {
+    body {
+        background-color: #FAFAFA;
+        background-repeat: no-repeat;
+    }
+}
+
+#svg1 {
+
+}
+
+#svg2 {
+
+}
+
+#top-content {
+    position: relative;
+    height: 550px;
+    background-color: #DCDCDC;
+    display: block;
+}
+
+#title-box {
+    font-family: "chaparral pro";
+    display: inline-block;
+    vertical-align: top;
+}
+
+span {
+    display: block;
+    width: 285px;
+    height: 40px;
+    padding-top: 3px;
+    background: #d74523;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+#art-box{
+    display: block;
+    height: 45px;
+    padding-top: 5px;
+    background: lightgrey;
+    margin-top: -45px;
+
+}
+
+#top-content{
+    height: 35px;
+    background-color: '#f2dcc9';
+    background-size: 100% 100%;
+    background-image: url("../data/ricepaper_v3.png");
+}
+
+#write-up {
+    margin-top: 70px;
+}
+
+
+
+li {
+    font-size: 12px;
+
+}
+
+ol {
+    margin-left: 10px;
+}
+
+.path {
+    stroke: grey;
+    stroke-width: 2;
+    fill: none;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+.label{
+    font-family: 'PT Serif', 'Helvetica Neue','Helvetica',sans-serif;
+    font-size: 1em;
+    background-color: #D74523;
+}
+
+.tick {
+    font-family: 'PT Serif', 'Helvetica Neue','Helvetica',sans-serif;
+    font-size: 1em;
+}
+
+.axis {
+    stroke: grey;
+    color: D74523;
+}
 
 th {
     text-align: center;
@@ -9,4 +122,8 @@ th {
 
 td {
     padding: 10px;
+}
+
+.center-block {
+    float: none;
 }
