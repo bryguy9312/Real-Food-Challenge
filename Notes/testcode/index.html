@@ -58,30 +58,32 @@
 </div>
 
 
-<div class="row">
-    <div class="col-md-8" id="chart">
-        <svg style="height: 500px"></svg>
+<div class="col-md-10 center-block">
+    <div class="row">
+        <div class="col-md-4" id="chart-total">
+            <svg style="height: 500px"></svg>
+        </div>
+        <div class="col-md-8" id="chart">
+            <svg style="height: 500px"></svg>
+        </div>
     </div>
-    <div class="col-md-4" id="chart-total">
-        <svg style="height: 500px"></svg>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-8" id="chart-detail" style="display:none">
-        <svg style="height: 500px"></svg>
-    </div>
-    <div class="col-md-4" id="chart-alternatives" style="display:none" ng-app="chartApp" ng-controller="ChartController">
-        <div class="text-center"><h4>Alternative Purchase Options</h4></div>
-        <table class="table-responsive table-striped table-bordered col-md-12">
-            <tr>
-                <th>Brand</th>
-                <th>Vendor</th>
-            </tr>
-            <tr ng-repeat="element in altData | filter : selectedCategory">
-                <td>{{element.vendor}}</td>
-                <td>{{element.brand}}</td>
-            </tr>
-        </table>
+    <div class="row">
+        <div class="col-md-4" id="chart-alternatives" style="display:none" ng-app="chartApp" ng-controller="ChartController">
+            <div class="text-center"><h4>Alternative Purchase Options</h4></div>
+            <table class="table-responsive table-striped table-bordered col-md-12">
+                <tr>
+                    <th>Brand</th>
+                    <th>Vendor</th>
+                </tr>
+                <tr ng-repeat="element in altData | filter : selectedCategory">
+                    <td>{{element.vendor}}</td>
+                    <td>{{element.brand}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-8" id="chart-detail" style="display:none">
+            <svg style="height: 500px"></svg>
+        </div>
     </div>
 </div>
     <script src="js/chart.js"></script>
